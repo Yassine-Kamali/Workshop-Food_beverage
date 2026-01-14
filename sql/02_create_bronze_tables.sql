@@ -106,11 +106,15 @@ CREATE OR REPLACE TABLE BRONZE.product_reviews (
     product_id VARCHAR(50),
     reviewer_id VARCHAR(50),
     reviewer_name VARCHAR(255),
+    helpful_votes INTEGER,
+    total_votes INTEGER,
     rating INTEGER,
-    review_date DATE,
+    review_date TIMESTAMP,
     review_title VARCHAR(500),
     review_text TEXT,
-    product_category VARCHAR(100)
+    product_category VARCHAR(100),
+    product_subcategory VARCHAR(100),
+    product_description TEXT
 )
 COMMENT = 'Avis produits clients - Données brutes';
 

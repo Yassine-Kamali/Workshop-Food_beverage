@@ -84,10 +84,21 @@ SELECT * FROM BRONZE.marketing_campaigns LIMIT 10;
 -- =====================================================
 -- 6. Chargement : product_reviews.csv
 -- =====================================================
+-- Note : Ce fichier utilise des TAB comme délimiteurs (TSV format)
 
 COPY INTO BRONZE.product_reviews
 FROM @ANYCOMPANY_LAB.BRONZE.S3_FOOD_BEVERAGE_STAGE/product_reviews.csv
-FILE_FORMAT = (FORMAT_NAME = 'ANYCOMPANY_LAB.BRONZE.CSV_FORMAT')
+FILE_FORMAT = (
+    TYPE = 'CSV'
+    FIELD_DELIMITER = '\t'
+    SKIP_HEADER = 1
+    FIELD_OPTIONALLY_ENCLOSED_BY = 'NONE'
+    ESCAPE_UNENCLOSED_FIELD = 'NONE'
+    TRIM_SPACE = TRUE
+    ERROR_ON_COLUMN_COUNT_MISMATCH = FALSE
+    EMPTY_FIELD_AS_NULL = TRUE
+    ENCODING = 'UTF8'
+)
 ON_ERROR = 'CONTINUE'
 PURGE = FALSE;
 

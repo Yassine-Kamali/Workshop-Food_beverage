@@ -168,16 +168,26 @@ SELECT DISTINCT
     TRIM(product_id) AS product_id,
     TRIM(reviewer_id) AS reviewer_id,
     TRIM(reviewer_name) AS reviewer_name,
+    COALESCE(helpful_votes, 0) AS helpful_votes,
+    COALESCE(total_votes, 0) AS total_votes,
     rating,
     review_date,
     TRIM(review_title) AS review_title,
     TRIM(review_text) AS review_text,
-    TRIM(product_category) AS product_category
+    TRIM(product_category) AS product_category,
+    TRIM(product_subcategory) AS product_subcategory,
+    TRIM(product_description) AS product_description,
+    CASE 
+        WHEN total_votes > 0 THEN helpful_votes / total_votes
+        ELSE NULL
+    END AS helpfulness_ratio
 FROM BRONZE.product_reviews
 WHERE review_id IS NOT NULL
   AND product_id IS NOT NULL
   AND rating BETWEEN 1 AND 5
   AND review_date IS NOT NULL
+  AND helpful_votes >= 0
+  AND total_votes >= 0
 QUALIFY ROW_NUMBER() OVER (PARTITION BY review_id ORDER BY review_date DESC) = 1;
 
 -- Vérifications
