@@ -25,8 +25,8 @@ SELECT
     -- Features géographiques
     es.region,
     CASE
-        WHEN es.region IN ('North', 'South') THEN 'Primary_Region'
-        ELSE 'Secondary_Region'
+        WHEN es.region IN ('North', 'South') THEN 'Région_Primaire'
+        ELSE 'Région_Secondaire'
     END AS region_category,
 
     -- Features promotionnelles
@@ -37,9 +37,9 @@ SELECT
     -- Features transactionnelles
     es.amount AS transaction_amount,
     CASE
-        WHEN es.amount < 25 THEN 'Low'
-        WHEN es.amount < 75 THEN 'Medium'
-        ELSE 'High'
+        WHEN es.amount < 25 THEN 'Faible'
+        WHEN es.amount < 75 THEN 'Moyen'
+        ELSE 'Élevé'
     END AS amount_category,
 
     -- Agrégats par région et mois (features dérivées)
@@ -87,9 +87,9 @@ SELECT
     END AS age_group_encoded,
 
     CASE
-        WHEN ec.income_segment = 'Low Income' THEN 1
-        WHEN ec.income_segment = 'Middle Income' THEN 2
-        WHEN ec.income_segment = 'High Income' THEN 3
+        WHEN ec.income_segment = 'Faible Revenu' THEN 1
+        WHEN ec.income_segment = 'Revenu Moyen' THEN 2
+        WHEN ec.income_segment = 'Haut Revenu' THEN 3
         ELSE 4
     END AS income_segment_encoded,
 

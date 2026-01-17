@@ -46,9 +46,9 @@ SELECT
 
     -- Indicateurs calculés
     CASE
-        WHEN t.amount > 100 THEN 'High Value'
-        WHEN t.amount > 50 THEN 'Medium Value'
-        ELSE 'Low Value'
+        WHEN t.amount > 100 THEN 'Valeur Élevée'
+        WHEN t.amount > 50 THEN 'Valeur Moyenne'
+        ELSE 'Valeur Faible'
     END AS transaction_value_segment
 
 FROM SILVER.financial_transactions_clean t
@@ -158,10 +158,10 @@ SELECT
 
     -- Segmentation par revenu
     CASE
-        WHEN c.annual_income < 30000 THEN 'Low Income'
-        WHEN c.annual_income < 60000 THEN 'Middle Income'
-        WHEN c.annual_income < 100000 THEN 'High Income'
-        ELSE 'Very High Income'
+        WHEN c.annual_income < 30000 THEN 'Faible Revenu'
+        WHEN c.annual_income < 60000 THEN 'Revenu Moyen'
+        WHEN c.annual_income < 100000 THEN 'Haut Revenu'
+        ELSE 'Très Haut Revenu'
     END AS income_segment
 
 FROM SILVER.customer_demographics_clean c;
