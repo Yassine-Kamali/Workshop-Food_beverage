@@ -95,9 +95,9 @@ SELECT
 
     -- Indicateur de succès
     CASE
-        WHEN SUM(t.amount) > LAG(SUM(t.amount)) OVER (PARTITION BY p.product_category, p.region ORDER BY p.start_date) THEN 'Successful'
-        WHEN SUM(t.amount) IS NULL THEN 'No Data'
-        ELSE 'Underperforming'
+        WHEN SUM(t.amount) > LAG(SUM(t.amount)) OVER (PARTITION BY p.product_category, p.region ORDER BY p.start_date) THEN 'Réussi'
+        WHEN SUM(t.amount) IS NULL THEN 'Aucune Donnée'
+        ELSE 'Sous-performance'
     END AS performance_indicator
 
 FROM SILVER.promotions_clean p
