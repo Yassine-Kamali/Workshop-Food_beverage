@@ -1,0 +1,63 @@
+/*
+-- 4.Comparaison de la moyenne des ventes quotidiennes (Avec vs Sans Promo)
+Objectif : Comparer la moyenne des ventes quotidiennes des jours SANS promotion par rapport aux jours AVEC promotion.
+*/
+SELECT 
+    CASE 
+        WHEN p.promotion_id IS NOT NULL THEN 'Vente sous Promotion' 
+        ELSE 'Vente Organique (Sans Promo)' 
+    END AS sales_type,
+    COUNT(t.transaction_id) AS order_count,
+    SUM(t.amount) AS total_revenue,
+    ROUND(AVG(t.amount), 2) AS avg_ticket
+FROM silver.financial_transactions_clean t
+LEFT JOIN silver.promotions_clean p 
+    ON t.region = p.region 
+    AND t.transaction_date BETWEEN p.start_date AND p.end_date
+WHERE t.transaction_type = 'Sale'
+GROUP BY 1;
+
+/*
+--2. Sensibilité des Catégories aux Promotions
+bjectif : Quelles catégories de produits répondent le mieux à une réduction ?
+*/
+SELECT 
+    p.product_category,
+    COUNT(t.transaction_id) AS promo_orders,
+    SUM(t.amount) AS promo_revenue,
+    ROUND(AVG(p.discount_percentage) * 100, 2) AS avg_discount_pct
+FROM silver.financial_transactions_clean t
+INNER JOIN silver.promotions_clean p 
+    ON t.region = p.region 
+    AND t.transaction_date BETWEEN p.start_date AND p.end_date
+WHERE t.transaction_type = 'Sale'
+GROUP BY 1
+ORDER BY promo_revenue DESC;
+
+/*
+-- 3. Lien Campagnes ↔ Ventes (Impacto del Marketing)
+Objectif : Déterminer si l'investissement par catégorie est proportionnel à la visibilité générée.
+*/
+SELECT 
+    product_category,
+    campaign_type,
+    SUM(budget) AS total_budget,
+    SUM(reach) AS total_reach,
+    AVG(conversion_rate) AS avg_conversion
+FROM silver.marketing_campaigns_clean
+GROUP BY 1, 2
+ORDER BY total_budget DESC;
+
+/*
+-- 4. Identification des Campagnes les plus efficaces (ROI)
+Objectif : Calculer le coût par acquisition. Quel canal nous permet d'acquérir des clients à bas prix ?
+*/
+
+SELECT 
+    campaign_type,
+    SUM(budget) AS total_cost,
+    ROUND(SUM(reach * conversion_rate), 0) AS estimated_conversions,
+    ROUND(SUM(budget) / NULLIF(SUM(reach * conversion_rate), 0), 2) AS cost_per_conversion
+FROM silver.marketing_campaigns_clean
+GROUP BY 1
+ORDER BY cost_per_conversion ASC; 
