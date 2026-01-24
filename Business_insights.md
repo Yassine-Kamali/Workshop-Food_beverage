@@ -114,4 +114,19 @@ Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) p
 2. **Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
 3. **Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
 
-4. 
+ ## 9. Opérations : Analyse des Ruptures de Stock (Risques Logistiques)
+**Référence du script :** `sql/inventory_stockout_analysis.sql`
+
+**Résultats clés :**
+- **Déficit Critique :** L'entrepôt **Wright-Warren** présente le déficit le plus alarmant pour la catégorie **Snacks** avec un manque de **388 unités** par rapport au seuil de réapprovisionnement.
+- **Catégories les plus exposées :** Les **Boissons (Beverages)** et l'**Alimentation Bébé (Baby Food)** sont les catégories qui apparaissent le plus fréquemment en situation de sous-stock critique.
+- **Gravité du stock actuel :** Plusieurs produits affichent un stock réel représentant moins de **25%** du seuil de sécurité (ex: Boissons chez Sims, Rodriguez and Byrd avec 101 unités pour un seuil de 439).
+- **Entrepôts sous tension :** Wright-Warren, Clarke-Phillips et Wise LLC concentrent les plus gros volumes de déficit, mettant en péril la distribution régionale.
+
+**Insight Business :**
+La chaîne logistique est actuellement en mode "réactif" plutôt que "prédictif". Étant donné que AnyCompany est un acteur majeur du secteur Food & Beverage, avoir des ruptures massives sur les catégories **Beverages** (cœur de métier) et **Baby Food** (haute fidélité) est critique. Ces ruptures expliquent probablement une partie de la baisse de la part de marché (de 28% à 22%), car le produit n'est simplement pas disponible en rayon.
+
+**Stratégie :**
+1. **Réapprovisionnement Prioritaire :** Lancer des ordres d'achat d'urgence pour les catégories Boissons et Alimentation Bébé dans les entrepôts du Top 10 des déficits.
+2. **Révision des seuils (Reorder Points) :** Ajuster les seuils de sécurité en fonction de la saisonnalité et des délais de livraison des fournisseurs (Lead Time) pour éviter que le stock ne tombe aussi bas avant le déclenchement d'une commande.
+3. **Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
