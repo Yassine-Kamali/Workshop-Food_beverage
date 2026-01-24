@@ -37,3 +37,17 @@ SELECT
 FROM silver.logistics_and_shipping_clean
 GROUP BY 1, 2
 ORDER BY delai_moyen_jours DESC;
+
+/*
+-- 10.Analyse de la satisfaction client et de la qualité
+-- Objectif : Déterminer si la qualité du produit ou le service impactent les ventes.
+-- 1. Note moyenne par catégorie de produit
+-- Identifier quelles catégories déçoivent les clients.
+*/
+SELECT 
+    product_category AS product_category,
+    ROUND(AVG(rating), 2) AS average_rating,
+    COUNT(*) AS total_reviews
+FROM silver.product_reviews_clean
+GROUP BY 1
+ORDER BY average_rating ASC;
