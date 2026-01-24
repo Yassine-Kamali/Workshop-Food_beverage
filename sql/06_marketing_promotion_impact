@@ -18,7 +18,7 @@ WHERE t.transaction_type = 'Sale'
 GROUP BY 1;
 
 /*
---2. Sensibilité des Catégories aux Promotions
+--5. Sensibilité des Catégories aux Promotions
 bjectif : Quelles catégories de produits répondent le mieux à une réduction ?
 */
 SELECT 
@@ -35,7 +35,7 @@ GROUP BY 1
 ORDER BY promo_revenue DESC;
 
 /*
--- 3. Lien Campagnes ↔ Ventes (Impacto del Marketing)
+-- 6. Lien Campagnes ↔ Ventes (Impacto del Marketing)
 Objectif : Déterminer si l'investissement par catégorie est proportionnel à la visibilité générée.
 */
 SELECT 
@@ -49,7 +49,7 @@ GROUP BY 1, 2
 ORDER BY total_budget DESC;
 
 /*
--- 4. Identification des Campagnes les plus efficaces (ROI)
+-- 7. Identification des Campagnes les plus efficaces (ROI)
 Objectif : Calculer le coût par acquisition. Quel canal nous permet d'acquérir des clients à bas prix ?
 */
 
