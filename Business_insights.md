@@ -34,3 +34,5 @@ Le succès de AnyCompany repose sur les "Meal Solutions" en Amérique. Cependant
 **Insight Business :**
 AnyCompany est une marque de "niche premium" pour les clients mûrs. La perte de part de marché (de 28% à 22%) s'explique par l'incapacité de la marque à attirer les nouvelles générations qui préfèrent les startups D2C. 
 **Stratégie de redressement :** Utiliser les modèles ML de la Phase 3 pour identifier les attributs produits qui pourraient convertir le segment "Youth" sans cannibaliser la marge des segments "Senior" actuels.
+
+### 06_marketing_promotion_impact
