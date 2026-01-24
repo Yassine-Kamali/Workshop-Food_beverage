@@ -1,4 +1,4 @@
-/*
+# /*
 Analyse de l’évolution des ventes dans le temps
 -- 1. Évolution mensuelle des ventes pour identifier la baisse
 */
@@ -11,7 +11,7 @@ WHERE transaction_type = 'Sale'
 GROUP BY 1
 ORDER BY 1;
 
-/*
+# /*
 Performance par produit, catégorie et région
 -- 2.Ventes par catégorie de produit
 Objectif : Identifier les zones géographiques ayant une faible performance.
@@ -31,7 +31,7 @@ WHERE t.transaction_type = 'Sale'
 GROUP BY 1, 2 
 ORDER BY total_revenue DESC;
 
-/*
+# /*
 Répartition des clients par segments démographiques
 -- 3.: Analyse démographique multidimensionnelle
 -- Regroupe : Genre, Région, Niveau de revenus et Tranche d'âge en une seule vue.
