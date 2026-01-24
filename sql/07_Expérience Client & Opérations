@@ -1,5 +1,5 @@
 /*
--- 7.Service Client : Analyse des Interactions
+-- 8.Service Client : Analyse des Interactions
 Objectif : Analyser les causes majeures d'insatisfaction et le taux de satisfaction client.
 */
 SELECT 
@@ -12,7 +12,7 @@ GROUP BY 1, 2
 ORDER BY total_interactions DESC;
 
 /*
--- 8.Opérations : Analyse des Ruptures de Stock
+-- 9.Opérations : Analyse des Ruptures de Stock
 Objectif : Détecter les produits en risque de rupture (Stock < Seuil de réapprovisionnement)
 */
 SELECT 
@@ -26,7 +26,7 @@ WHERE current_stock < reorder_point
 ORDER BY deficit_unites DESC;
 
 /*
--- 9.Logistique : Délais de Livraison et Performance
+-- 10.Logistique : Délais de Livraison et Performance
 Objectif : Évaluer si les délais de livraison impactent l'expérience client par région.
 */
 SELECT 
@@ -39,7 +39,7 @@ GROUP BY 1, 2
 ORDER BY delai_moyen_jours DESC;
 
 /*
--- 10.Analyse de la satisfaction client et de la qualité
+-- 11.Analyse de la satisfaction client et de la qualité
 -- Objectif : Déterminer si la qualité du produit ou le service impactent les ventes.
 -- 1. Note moyenne par catégorie de produit
 -- Identifier quelles catégories déçoivent les clients.
