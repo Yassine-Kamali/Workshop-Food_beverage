@@ -96,3 +96,22 @@ Il existe une opportunité majeure d'optimisation. La **Radio** et la **TV** son
 Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les investissements en Radio** et réduire drastiquement la TV. La réallocation de ces fonds vers les **Influenceurs et le Content Marketing** permettra de maintenir le volume d'acquisition tout en réduisant les coûts fixes, sécurisant ainsi l'objectif de reconquête de part de marché.
 
 ## 07_Expérience Client & Opérations
+
+## 8. Service Client : Analyse des Interactions (Volume vs Satisfaction)
+**Référence du script :** `sql/customer_service_analysis.sql`
+
+**Résultats clés :**
+- **Canaux les plus sollicités :** Les **Plaintes par Email** (289 interactions) et les **Demandes de produits par Chat** (276) dominent le flux de travail du service client.
+- **Pic de Satisfaction :** Le suivi de commande (**Order Status**) via **Email** enregistre le score de satisfaction le plus élevé (**3,20**), suivi de près par les retours sur les réseaux sociaux (3,17).
+- **Alerte Critique :** Le **Support Technique par Chat** est le point le plus faible de l'expérience client avec un score de seulement **2,75**, ce qui indique une incapacité à résoudre des problèmes complexes en temps réel.
+- **Inefficacité du Téléphone :** Les appels pour le statut des commandes sont massifs (271 interactions) mais génèrent une satisfaction médiocre (**2,91**), suggérant un processus fastidieux pour le client.
+
+**Insight Business :**
+Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) pour des questions à faible valeur ajoutée comme le statut des commandes. Le décalage de satisfaction entre l'Email (3,20) et le Téléphone (2,91) pour une même catégorie montre que le client préfère une information écrite et précise plutôt qu'une attente téléphonique.
+
+**Stratégie :**
+1. **Automatisation "Self-Service" :** Implémenter un système de suivi de commande automatisé (chatbot ou portail client) pour réduire les 271 appels téléphoniques, permettant de réallouer le budget vers des experts techniques.
+2. **Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
+3. **Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
+
+4. 
