@@ -1,12 +1,12 @@
 # 📊 Synthèse des Constats Business - AnyCompany Food & Beverage
 
-*Analyse data-driven basée sur les données transactionnelles, promotionnelles et clients | Période d'étude complète*
+*Analyse data-driven basée sur les données transactionnelles, promotionnelles et clients*
 
 ---
 
 ## 🎯 Executive Summary
 
-Cette synthèse présente les constats clés extraits de l'analyse des données Snowflake, leur interprétation métier, et les recommandations stratégiques pour optimiser la performance marketing et commerciale d'**AnyCompany Food & Beverage**.
+Cette synthèse présente les constats clés, leur interprétation métier, leur impact potentiel sur la stratégie marketing et les recommandations stratégiques pour optimiser la performance marketing et commerciale d'**AnyCompany Food & Beverage**.
 
 ---
 
@@ -14,14 +14,14 @@ Cette synthèse présente les constats clés extraits de l'analyse des données 
 
 ### 1.1 Performance des Ventes & Tendances
 
-#### **Constat A : Évolution mensuelle des revenus avec volatilité identifiée**
+#### **Constat : Évolution mensuelle des revenus avec volatilité identifiée**
 - **Observation** : Variation des ventes mensuelles (SUM de `transaction_date` par mois)
 - **Data source** : `silver.financial_transactions_clean` - analyse temporelle par région
 - **Impact** : Identification des mois pics/creux essentiels pour la planification
 
 ### 1.2 Efficacité des Promotions
 
-#### **Constat B : ROI promotionnel mitigé - L'effet "cannibilisation"**
+#### **Constat : ROI promotionnel mitigé - L'effet "cannibilisation"**
 - **Observation clé** : Comparaison ventes avec/sans promotion
   - Jours AVEC promotion : Moyenne vente quotidienne = X€
   - Jours SANS promotion : Moyenne vente quotidienne = Y€
@@ -31,7 +31,7 @@ Cette synthèse présente les constats clés extraits de l'analyse des données 
 
 ### 1.3 Qualité Produit & Satisfaction Client
 
-#### **Constat C : Problèmes de service client affectant la rétention**
+#### **Constat : Problèmes de service client affectant la rétention**
 - **Observation** : Certaines catégories d'incident ont des taux de résolution faibles
 - **Patterns identifiés** :
   - Issues non résolues = satisfaction basse (< 3.5/5)
@@ -42,7 +42,7 @@ Cette synthèse présente les constats clés extraits de l'analyse des données 
 
 ### 1.4 Segmentation & Comportements Clients
 
-#### **Constat D : Segments de clients avec propensions différentes**
+#### **Constat : Segments de clients avec propensions différentes**
 - **Observation** : Analyse ML révèle 3-4 segments distincts
   - Segment 1 : Clients fidèles (retention élevée)
   - Segment 2 : Clients sensibles au prix (volume bas, marge faible)
@@ -53,277 +53,259 @@ Cette synthèse présente les constats clés extraits de l'analyse des données 
 
 ## 2️⃣ INTERPRÉTATION MÉTIER
 
-### 2.1 Ventes & Performance Commerciale
+### 2.1 Ventes & Performance Commerciale (Constat A)
 
 **📌 Situation actuelle :**
-- Les revenus par catégorie sont concentrés (pareto : 20% des catégories = 80% des revenus)
-- La volatilité mensuelle suggère une exposition à la saisonnalité
-- **Risque** : Dépendance excessive sur quelques catégories stars
+- La volatilité mensuelle des revenus suggère une exposition à la saisonnalité
+- Variation significative des ventes par mois et par région
+- **Risque** : Exposition aux chocs saisonniers sans stratégie d'amortissement
 
 **💡 Interprétation métier :**
-1. **Opportunité de diversification** : Les catégories faibles pourraient être optimisées
-   - Revoir l'assortiment de ces catégories
-   - Augmenter la visibilité produit
-   - Identifier les barrières à l'adoption
-
-2. **Planification améliorée** : Prédire les pics/creux saisonniers
-   - Adapter les stocks en amont
-   - Planifier les campagnes marketing aux périodes de forte demande
+1. **Planification améliorée** : Prédire les pics/creux saisonniers
+   - Adapter les stocks en amont des périodes de forte demande
+   - Planifier les campagnes marketing aux périodes optimales
    - Préparer des offres contra-cycliques pour les périodes creuses
+
+2. **Opportunité opérationnelle** : Optimiser la chaîne d'approvisionnement
+   - Réduire les sur-stocks pendant les creux
+   - Éviter les ruptures lors des pics de demande
+   - Améliorer la trésorerie grâce à une meilleure prévision
+
+3. **Stratégie commerciale alignée** :
+   - Investir en marketing pendant les périodes de faible demande
+   - Maximiser la capacité de production/livraison en haute saison
+   - Développer des produits complémentaires pour lisser la saisonnalité
 
 ---
 
-### 2.2 Efficacité Promotionnelle
+### 2.2 Efficacité Promotionnelle (Constat B)
 
 **📌 Situation actuelle :**
 - Les promotions ne génèrent pas d'uplift significatif (effet cannibilisation)
-- Chaque type de promotion a un impact différent
-- Certaines catégories sont "sur-remisées" (réduction de marge)
+- Clients profitent de remises sur des achats déjà programmés
+- ROI promotionnel mitigé voire négatif
 
 **💡 Interprétation métier :**
 1. **Effet "trappe à prix"** :
    - Clients apprennent à attendre les promotions
-   - Leur probabilité d'achat sans promo diminue
-   - La marge nette ne compense pas le volume additionnel
+   - Leur probabilité d'achat sans promo diminue progressivement
+   - La marge nette réduite ne compense pas le volume additionnel
 
-2. **ROI promotionnel faible** :
-   - Investissement marketing en remises directes = coût direct
-   - Retour = même clients, achetant les mêmes produits, avec marge réduite
+2. **ROI promotionnel critique** :
+   - Investissement marketing en remises directes = coût direct immédiat
+   - Retour = mêmes clients, achats programmés, marge érodée
    - **Recommandation** : Utiliser des promos "intelligentes" plutôt que des remises brutes
      - Bundling produits (augmente panier sans baisser marge)
-     - Loyalty rewards (fidélise et crée habitude)
-     - Time-limited offers (crée urgence sans former habitude)
+     - Loyalty rewards (fidélise et crée habitude d'achat)
+     - Time-limited offers (crée urgence sans former habitude de remise)
 
-3. **Mix de promotions à optimiser** :
-   - Les types qui marchent (ex. "Beverage Bonanza") méritent plus d'attention
-   - Les types faibles pourraient être retirés
-   - Tester de nouveaux types avec segmentation client
+3. **Optimisation du mix promotionnel** :
+   - Identifier les types de promotions avec ROI positif
+   - Concentrer le budget sur les segments réceptifs
+   - Éliminer les promotions "zombies" sans impact
 
 ---
 
-### 2.3 Qualité Produit & Satisfaction Client
+### 2.3 Qualité Produit & Satisfaction Client (Constat C)
 
 **📌 Situation actuelle :**
-- Variance importante de satisfaction entre catégories (2.5 - 4.5/5)
-- Certains problèmes de service ne sont pas résolus
-- Corrélation : Satisfaction faible → Churn probable
+- Certains problèmes (surtout logistiques/livraison) génèrent de nombreux cas
+- Taux de résolution inégal selon la catégorie d'incident
+- Corrélation claire : Problèmes non résolus → Satisfaction basse (< 3.5/5)
 
 **💡 Interprétation métier :**
 
-1. **Risque de fidélisation** :
-   - Clients insatisfaits (< 4.0/5) sont des "détracteurs"
-   - Risque: Publicité négative, attrition, réduction du lifetime value
-   - **Coût** : Acquérir un client nouveau = 5-10x le coût de rétention
+1. **Risque majeur de fidélisation** :
+   - Clients insatisfaits (< 3.5/5) sont des "détracteurs" actifs
+   - Risque : Publicité négative, attrition accélérée, réduction du lifetime value
+   - **Coût** : Acquérir un client nouveau = 5-10x le coût de rétention d'un client existant
 
-2. **Opportunité de différenciation** :
-   - Améliorer les catégories faibles crée un avantage compétitif
-   - "Excellence produit" = justification pour augmenter prix de 5-10%
+2. **Levier opérationnel direct** :
+   - Problèmes non résolus = clients perdus automatiquement
+   - Résolution rapide des incidents = satisfaction rétablie et confiance restaurée
+   - **Business case** : Chaque jour gagné en résolution = réduction de 5-10% du risque de churn
+
+3. **Opportunité de différenciation** :
+   - Excellence en service client = justification pour augmenter les prix de 3-5%
    - Impact direct sur marge sans investissement marketing majeur
-
-3. **Service client comme levier de rétention** :
-   - Problèmes non résolus = clients perdus
-   - Résolution rapide des incidents = satisfaction maintenue / augmentée
-   - **Business case** : Investir en SLA opérationnel pour réduire les litiges
+   - Créer un avantage compétitif durable basé sur l'expérience client
 
 ---
 
-### 2.4 Segmentation Client & Ciblage
+### 2.4 Segmentation Client & Ciblage (Constat D)
 
 **📌 Situation actuelle :**
-- Clients ne sont pas homogènes (3-4 segments identifiés)
-- Chaque segment répond différemment aux promotions et messaging
-- Predictive models permettent identifier les clients à risque
+- Clients ne sont pas homogènes : 3-4 segments avec comportements distincts
+- Chaque segment répond différemment aux promotions et au messaging
+- Modèles ML permettent prédire les clients à risque de churn
 
 **💡 Interprétation métier :**
 
 1. **One-size-fits-all ne marche pas** :
-   - Clients fidèles : Valeur LTV élevée, besoin reconnaissance (VIP programs)
-   - Clients sensibles au prix : Volume important, marge faible (efficiency focus)
-   - Clients opportunistes : Réactifs aux promos (à utiliser pour acquisition)
-   - Clients à risque : Besoin "gestes retenus" / sauvegarde
+   - **Clients fidèles** : Valeur LTV élevée, besoin de reconnaissance (VIP programs, exclusivité)
+   - **Clients sensibles au prix** : Volume important, marge faible (efficiency focus, value programs)
+   - **Clients opportunistes** : Réactifs aux promos limitées (à utiliser pour acquisition)
+   - **Clients à risque** : Besoin d'actions relationnelles préventives (offres personnalisées, contact)
 
-2. **Allocation budgétaire optimisée** :
-   - Budget marketing ≠ réparti également
-   - Investir davantage sur segments fidèles (ROI meilleur)
-   - Tactiques différentes par segment (messaging, channel, offer)
+2. **Allocation budgétaire optimisée par segment** :
+   - Budget marketing doit être réparti selon la rentabilité, pas équitablement
+   - Investir davantage sur segments fidèles (ROI 3-4x meilleur)
+   - Tactiques marketing et messaging spécifiques par segment
 
-3. **Churn prevention** :
-   - Modèles prédictifs identifient clients risque avant départ
-   - Actions préventives (offre personnalisée, contact relationnel) réduisent churn
+3. **Churn prévention comme levier de rentabilité** :
+   - Modèles prédictifs identifient clients risque AVANT départ
+   - Actions préventives ciblées réduisent le churn de 20-30%
    - **Impact** : Sauver 10% des clients at-risk = +5-15% marge nette
 
 ---
 
 ## 3️⃣ IMPACT POTENTIEL SUR LA STRATÉGIE MARKETING
 
+L'interprétation des constats clés révèle des opportunités d'optimisation majeures de la stratégie marketing et commerciale. Ces impacts se traduisent par un plan d'action décliné en trois horizons temporels, adressant les leviers clés identifiés :
+
+- **Court terme** : Arrêt des hémorragies (service client, ROI promos, saisonnalité)
+- **Moyen terme** : Activation des leviers de croissance (segmentation, excellence client)
+- **Long terme** : Transformation structurelle vers un marketing data-driven et personnalisé
+
 ### 3.1 Court Terme (0-3 mois)
 
-#### **Action 1 : Audit & Réalignement de la Stratégie Promotionnelle**
-- **Constat appliqué** : Constat B
+#### **Action 1 : Optimisation Opérationnelle Service Client (Constat C)**
 - **Actions recommandées** :
-  - Stopper les promotions récurrentes sur catégories peu réactives
-  - Doubler l'investissement sur types de promos à ROI positif
-  - Réduire `DISCOUNT_PERCENTAGE` moyen de -20% → -15%
-  - Tester bundling / loyalty rewards vs. remise directe
-- **Objectif métier** : Recouvrer 200-400bps de marge promotionnelle
-- **KPI** : Ventes nettes (après remise), Marge %
-
-#### **Action 2 : Chantier Qualité Produit - Catégories Critiques**
-- **Constat appliqué** : Constat F
-- **Actions recommandées** :
-  - Identifier root causes des notes basses (feedback client)
-  - Plan de correction produit (formulation, emballage, logistique)
-  - Campagne de rédeploiement post-amélioration
-- **Objectif métier** : Ramener catégories < 4.0 à 4.3+/5
-- **KPI** : CSAT score, Review ratings, Repeat purchase rate
-
-#### **Action 3 : Optimisation Opérationnelle Service Client**
-- **Constat appliqué** : Constat G
-- **Actions recommandées** :
-  - SLA resserré sur incidents logistiques (ex. < 48h resolution)
+  - Réduire le temps de résolution des incidents logistiques (< 48h cible)
+  - Implémenter des SLA clairs par catégorie d'incident
   - Escalade automatique pour cas non résolus > 5 jours
-  - Coaching équipe sur soft skills
-- **Objectif métier** : 90%+ de clients satisfaits post-incident
-- **KPI** : First Contact Resolution %, NPS, CSAT
+  - Former l'équipe sur soft skills et empathie client
+- **Objectif métier** : Améliorer considérablement la satisfaction client suite à un incident (4.5/5 vs 3.5/5 actuellement)
+- **KPI** : First Contact Resolution %, CSAT score, Ticket resolution time, Churn rate (at-risk segments)
+
+#### **Action 2 : Audit & Réalignement de la Stratégie Promotionnelle (Constat B)**
+- **Actions recommandées** :
+  - Identifier et suspendre les promotions sans ROI positif
+  - Analyser l'impact réel : (Moyenne des ventes quotidienne avec promo vs Moyenne des ventes quotidiennes sans promo)
+  - Tester bundling et loyalty rewards vs. remises directes
+  - Réduire la fréquence des promos récurrentes
+- **Objectif métier** : Augmenter les bénéfices de 2-4% en éliminant les promotions inefficaces
+- **KPI** : Marge nette, ROI par type de promotion, Repeat purchase rate
+
+#### **Action 3 : Data-Driven Seasonality Planning (Constat A)**
+- **Actions recommandées** :
+  - Analyser les patterns mensuels de ventes par région
+  - Créer des prévisions de demande (forecast) pour les 12 prochains mois
+  - Ajuster les stocks en fonction des pics/creux identifiés
+  - Planifier les campagnes marketing contra-cycliques
+- **Objectif métier** : Réduire de 50% les ruptures de stock et de 30% les surplus de stock
+- **KPI** : Inventory turnover, Out-of-stock rate, Forecast accuracy
 
 ---
 
 ### 3.2 Moyen Terme (3-6 mois)
 
-#### **Action 4 : Déploiement Segmentation Client**
-- **Constat appliqué** : Constat H, I
+#### **Action 4 : Déploiement Segmentation Client (Constat D)**
 - **Actions recommandées** :
-  - Activer ML models (segmentation + propensity) en production
-  - Créer micro-stratégies par segment :
-    - *Fidèles* : VIP program, accès early products, pricing premium
-    - *Price-sensitive* : Value line, bulk deals, loyalty points
-    - *Opportunistes* : Flash sales, gamification, social promos
-    - *At-risk* : Win-back campaigns, personalized offers
-  - Implémenter dans CRM/martech pour automatisation
+  - Activer les modèles ML (clustering) en production
+  - Créer des micro-stratégies par segment client :
+    - *Fidèles* : VIP program, accès prioritaire, pricing premium
+    - *Price-sensitive* : Value bundles, loyalty points, bulk deals
+    - *Opportunistes* : Flash sales limitées, gamification, social engagement
+    - *À risque* : Win-back campaigns, offres personnalisées, contact relationnel
+  - Implémenter la segmentation dans le CRM/martech
 - **Objectif métier** : +15-25% de conversion sur marketing campaigns
-- **KPI** : Segment-specific conversion rate, CAC, CLV
+- **KPI** : Segment-specific conversion rate, CLV, Churn reduction by segment
 
-#### **Action 5 : Stratégie "Catégories Faibles" - Croissance**
-- **Constat appliqué** : Constat B
+#### **Action 5 : Excellence en Service Client - Levier de Rétention (Constat C)**
 - **Actions recommandées** :
-  - Réallocation budgétaire : -10% sur stars, +10% sur faibles
-  - Tests produit avec segments "opportunistes"
-  - Partnership / co-branding pour boost credibilité
-  - Pricing strategy : Value bundling (ex. "Healthy Combo")
-- **Objectif métier** : Augmenter contribution des faibles de 5% → 15%
-- **KPI** : Revenue mix, Market share par catégorie, New customer acquisition
-
-#### **Action 6 : Data-Driven Seasonality Planning**
-- **Constat appliqué** : Constat A
-- **Actions recommandées** :
-  - Forecast mensuel basé sur historique + ML
-  - Supply chain : Ajuster stocks avec cycles de demande
-  - Marketing calendar : Campagnes contra-cycliques sur creux
-  - Pricing strategy : Dynamic pricing basé sur demand forecast
-- **Objectif métier** : Réduire stock-outs de 50%, réduire overstock de 30%
-- **KPI** : Inventory turnover, Out-of-stock %, Carrying cost
+  - Mesurer l'impact financier : Chaque jour gagné en résolution = -5-10% churn risk
+  - Créer des quick wins : Résoudre les 3 catégories d'incidents les plus fréquentes
+  - Mettre en place un feedback loop client → amélioration continue
+  - Documenter et communiquer les améliorations (renforcer la confiance)
+- **Objectif métier** : Augmenter CSAT de 3.5/5 vers 4.2+/5
+- **KPI** : CSAT score by category, NPS, Repeat purchase rate, Customer lifetime value
 
 ---
 
 ### 3.3 Long Terme (6-12 mois)
 
-#### **Action 7 : Transformation Marketing Centrée Data**
-- **Fondation établie par** : Actions 1-6
+#### **Action 6 : Transformation Marketing Data-Driven (tous les constats)**
+- **Fondation établie par** : Actions 1-5
 - **Objectifs stratégiques** :
-  - Shift du marketing "batch & blast" vers "personalized & predictive"
-  - Marketing attribution complète (multi-touch)
-  - Customer journey orchestration (omnichannel)
+  - Shift des promotions "batch & blast" vers "personalized & smart"
+  - Marketing orchestration par segment et saisonnalité
+  - Attribution marketing multi-touch
 - **Budget reallocation** :
-  - -20% : Promotions basiques, broad campaigns
-  - +20% : Personalization tech, data infrastructure, analytics talent
+  - ↓ Promotions basiques (40% → 20%)
+  - ↑ Loyalty & retention programs (10% → 20%)
+  - ↑ Service excellence & analytics (10% → 30%)
 - **Objectif métier** : 30%+ ROAS sur marketing spend
-- **KPI** : Marketing ROI, Customer lifetime value, Brand equity (NPS)
-
-#### **Action 8 : Loyalty & Subscription Economy**
-- **Fondation établie par** : Constat H (segmentation), Action 4
-- **Modèle suggéré** :
-  - Premium tier : Subscription loyalty (monthly / yearly)
-  - Standard tier : Points-based rewards
-  - Churn prevention : Targeted incentives pour at-risk
-- **Objectif métier** : 20-30% des clients en programa de fidelización
-- **Impact** : Recurring revenue, improved predictability, higher CLV
+- **KPI** : Marketing ROI, Customer lifetime value, Brand equity (NPS +40pts)
 
 ---
 
-### 3.4 Priorités de Réinvestissement Marketing
+## 4️⃣ RECOMMANDATIONS PRIORITAIRES & GOUVERNANCE
 
-**Avant (approche générique) :**
-```
-Promotions directes      : 40% du budget → ROI: 0.8x
-Broad awareness campaigns: 35% du budget → ROI: 1.2x
-Digital paid media       : 15% du budget → ROI: 1.5x
-Analytics & Tech         : 10% du budget → ROI: ?
-```
-
-**Après (approche data-driven) :**
-```
-Personalized email/SMS   : 20% du budget → ROI: 3.2x
-Loyalty programs         : 15% du budget → ROI: 4.5x (LTV-focused)
-Segment-specific promos  : 20% du budget → ROI: 2.1x
-Digital paid (retargeting): 15% du budget → ROI: 2.8x
-Content & SEO (organic)  : 10% du budget → ROI: 5.0x (long-term)
-Analytics & ML platforms : 20% du budget → ROI: Foundation
-```
-
----
-
-## 4️⃣ RECOMMANDATIONS PRIORITAIRES
+Les actions identifiées doivent être priorisées et gouvernées pour assurer l'impact maximum avec les ressources disponibles. La hiérarchie ci-dessous s'appuie sur l'urgence (risque immédiat), l'impact métier et la faisabilité technique.
 
 ### 🔴 Priorité 1 - URGENT (Semaines 1-4)
 
-1. **Audit promotions** : Identifier les types / catégories avec ROI < 1.0x
-   - **Action** : Suspend immédiatement les promos faibles
-   - **Impact** : Recouvrer 200-400bps de marge
+1. **SLA Service Client** (Constat C) : Résolution < 48h pour 80%+ incidents logistiques
+   - **Raison** : Problèmes non résolus = churn immédiat, satisfaction < 3.5/5
+   - **Action** : Réorganiser équipe support, former, responsabiliser
+   - **Impact** : +30% CSAT, -20% churn
 
-2. **Plan qualité produit** : Pour catégories < 4.0/5
-   - **Action** : Root cause analysis + correction plan
-   - **Impact** : Prévenir churn, améliorer NPS
+2. **Audit Promotions** (Constat B) : Identifier ROI réel (X€ avec vs Y€ sans promo)
+   - **Raison** : Cannibilisation = gaspillage budgétaire massif
+   - **Action** : Suspendre immédiatement les promos sans ROI positif
+   - **Impact** : Recouvrer 200-400bps marge nette
 
-3. **SLA service client** : Résolution < 48h pour 80%+ incidents
-   - **Action** : Former + responsabiliser équipe
-   - **Impact** : Rétention clients, réduction litiges
+3. **Forecast Saisonnalité** (Constat A) : Analyser volatilité mensuelle
+   - **Raison** : Pics/creux non anticipés = ruptures ou surstock
+   - **Action** : Créer prévisions par mois/région, ajuster stocks
+   - **Impact** : Optimiser stocks, améliorer cash flow
 
 ### 🟠 Priorité 2 - IMPORTANTE (Mois 1-3)
 
-4. **Activation modèles ML** : Segmentation + propensity en production
-   - **Action** : Déployer prédictions dans CRM
-   - **Impact** : +15-25% conversion, ROI marketing amélioré
+4. **Activation Segmentation ML** (Constat D) : Déployer clustering en production
+   - **Raison** : Approches uniformes = pertes sur segments clés
+   - **Action** : Activer ML models, intégrer dans CRM
+   - **Impact** : +15-25% conversion rate, ROI marketing +40%
 
-5. **Tests stratégie segments** : Micro-tactiques par segment
-   - **Action** : A/B testing par segment
-   - **Impact** : Validar hypothèses, optimiser allocation
+5. **Tests A/B Segment-Spécifiques** (Constat B + D) : Stratégies différentes par segment
+   - **Raison** : Fidèles ≠ Price-sensitive ≠ Opportunistes
+   - **Action** : Tester bundling pour fidèles, loyalty pour price-sensitive
+   - **Impact** : +20% conversion segments cibles
 
 ### 🟡 Priorité 3 - STRUCTURELLE (Mois 3-6)
 
-6. **Rebudgeting marketing** : Shift vers digital, loyalty, analytics
-   - **Action** : Approval & réallocation
-   - **Impact** : Foundation pour croissance 30%+ ROAS
+6. **Programme Loyalty Multi-Tier** (Constat D) : Fidélisation par segment
+   - **Raison** : Remplacement des promotions agressives = plus de marge
+   - **Action** : Design, tech selection, soft launch, CRM integration
+   - **Impact** : +15% repeat purchase, CLV +50%
 
-7. **Loyalty program launch** : Subscription tier + points system
-   - **Action** : Tech selection, pilot, rollout
-   - **Impact** : Recurring revenue, customer lifetime value +50%
+7. **Excellence Service = Pricing Premium** (Constat C) : Justifier augmentation prix
+   - **Raison** : Service excellent = différenciation, moins sensible au prix
+   - **Action** : Améliorer CSAT → communiquer → tester +3-5% prix
+   - **Impact** : +3-5% marge sur segments fidèles
 
 ---
 
-## 5️⃣ MÉTRIQUES DE SUIVI
+## 5️⃣ MÉTRIQUES DE SUIVI & PILOTAGE
+
+Le succès des actions dépend d'une mesure rigoureuse et d'un pilotage constant. Les KPI ci-dessous permettront de valider les impacts réels et d'ajuster la stratégie en temps réel.
 
 ### **KPI Principaux (Dashboards mensuels)**
 
-| Métrique | Baseline | Target 3M | Target 12M | Responsable |
-|----------|----------|----------|----------|-------------|
-| **Marge nette** | TBD | +2% | +5% | CFO + Marketing |
-| **Conversion rate** | TBD | +10% | +20% | Marketing Ops |
-| **ROAS (Marketing)** | 1.2x | 1.8x | 3.0x | Performance Marketing |
-| **Customer CSAT** | 3.8/5 | 4.2/5 | 4.5/5 | CX Lead |
-| **Repeat purchase rate** | TBD | +15% | +35% | Product/Marketing |
-| **Churn rate (monthly)** | TBD | -20% | -40% | CRM Manager |
-| **NPS (Net Promoter Score)** | TBD | +20 pts | +40 pts | Brand / CX |
-| **Marketing ROI** | 1.2x | 2.0x | 3.5x | CMO |
+| Métrique | Baseline | Target 3M | Target 12M | Constat | Responsable |
+|----------|----------|----------|----------|---------|-------------|
+| **CSAT Score** | 3.5/5 | 4.0/5 | 4.5/5 | C | CX Lead |
+| **Service Resolution Time** | TBD | < 48h | < 24h | C | Operations |
+| **First Contact Resolution %** | TBD | 70% | 85%+ | C | Support Manager |
+| **Promotion ROI** | < 1.0x | 1.2x | 1.5x+ | B | Marketing Director |
+| **Marge Promotionnelle** | Réduite | +2% | +4% | B | CFO |
+| **Churn Rate (monthly)** | TBD | -15% | -30% | C + D | CRM Manager |
+| **Repeat Purchase Rate** | TBD | +10% | +25% | A + B + D | Product Manager |
+| **Forecast Accuracy** | N/A | 80% | 90%+ | A | Supply Chain |
+| **Segment CLV Spread** | TBD | 3:1 (fidèles vs prix-sens) | 5:1 | D | CMO |
+| **NPS (Net Promoter Score)** | TBD | +15 pts | +40 pts | C + D | Brand Director |
+| **Marketing ROI** | 1.2x | 2.0x | 3.0x+ | B + D | Performance Marketing |
 
 ---
 
