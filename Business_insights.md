@@ -94,3 +94,5 @@ Il existe une opportunité majeure d'optimisation. La **Radio** et la **TV** son
 
 **Stratégie de redressement :**
 Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les investissements en Radio** et réduire drastiquement la TV. La réallocation de ces fonds vers les **Influenceurs et le Content Marketing** permettra de maintenir le volume d'acquisition tout en réduisant les coûts fixes, sécurisant ainsi l'objectif de reconquête de part de marché.
+
+## 07_Expérience Client & Opérations
