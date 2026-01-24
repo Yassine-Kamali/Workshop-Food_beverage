@@ -1,1 +1,75 @@
+/*
+Analyse de l’évolution des ventes dans le temps
+-- 1. Évolution mensuelle des ventes pour identifier la baisse
+*/
+SELECT
+DATE_TRUNC('MONTH', transaction_date) AS sales_month,
+SUM(amount) AS total_revenue,
+COUNT(transaction_id) AS order_volume
+FROM silver.financial_transactions_clean
+WHERE transaction_type = 'Sale'
+GROUP BY 1
+ORDER BY 1;
 
+/*
+Performance par produit, catégorie et région
+-- 2.Ventes par catégorie de produit
+Objectif : Identifier les zones géographiques ayant une faible performance.
+*/
+
+SELECT 
+    t.region, 
+    p.product_category, 
+    SUM(t.amount) AS total_revenue,
+    COUNT(t.transaction_id) AS total_orders,
+    ROUND(AVG(t.amount), 2) AS average_order_value
+FROM silver.financial_transactions_clean t
+INNER JOIN silver.promotions_clean p 
+    ON t.region = p.region 
+    AND t.transaction_date BETWEEN p.start_date AND p.end_date
+WHERE t.transaction_type = 'Sale'
+GROUP BY 1, 2 
+ORDER BY total_revenue DESC;
+
+/*
+Répartition des clients par segments démographiques
+-- 3.: Analyse démographique multidimensionnelle
+-- Regroupe : Genre, Région, Niveau de revenus et Tranche d'âge en une seule vue.
+*/
+
+WITH customer_base AS (
+    SELECT 
+        customer_id,
+        region,
+        gender,
+        -- 1. Transformation of Date of Birth to Age Group
+        CASE 
+            WHEN DATEDIFF('year', date_of_birth, CURRENT_DATE()) < 30 THEN '1. Youth (<30)'
+            WHEN DATEDIFF('year', date_of_birth, CURRENT_DATE()) BETWEEN 30 AND 55 THEN '2. Adults (30-55)'
+            ELSE '3. Seniors (>55)' 
+        END AS age_group,
+        -- 2. Categorization of Annual Income
+        CASE 
+            WHEN annual_income < 50000 THEN 'A. Low Income'
+            WHEN annual_income BETWEEN 50000 AND 120000 THEN 'B. Medium Income'
+            ELSE 'C. High Income' 
+        END AS income_segment
+    FROM silver.customer_demographics_clean
+)
+SELECT 
+    region,
+    gender,
+    age_group,
+    income_segment,
+    COUNT(customer_id) AS customer_count,
+    -- Calculation of percentage over total for context
+    ROUND(100.0 * COUNT(customer_id) / SUM(COUNT(customer_id)) OVER(), 2) AS total_percentage
+FROM customer_base
+GROUP BY 
+    region, 
+    gender, 
+    age_group, 
+    income_segment
+ORDER BY 
+    region, 
+    customer_count DESC;
