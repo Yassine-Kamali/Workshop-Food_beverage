@@ -16,46 +16,45 @@ USE WAREHOUSE ANYCOMPANY_WH;
 
 CREATE OR REPLACE TABLE ANALYTICS.enriched_sales AS
 SELECT
-    t.transaction_id,
-    t.transaction_date,
-    t.transaction_type,
-    t.amount,
-    t.payment_method,
-    t.entity,
-    t.region,
-    t.account_code,
-
-    -- Dimensions temporelles
-    DATE_TRUNC('MONTH', t.transaction_date) AS sales_month,
-    DATE_TRUNC('QUARTER', t.transaction_date) AS sales_quarter,
-    DATE_TRUNC('YEAR', t.transaction_date) AS sales_year,
-    DAYOFWEEK(t.transaction_date) AS day_of_week,
-    MONTH(t.transaction_date) AS month_number,
-
-    -- Informations promotionnelles (jointure sur région et période)
+    t.TRANSACTION_ID,
+    t.TRANSACTION_DATE,
+    t.TRANSACTION_TYPE,
+    t.AMOUNT,
+    t.PAYMENT_METHOD,
+    t.ENTITY,
+    t.REGION,
+    t.ACCOUNT_CODE,
+-- Dimensions temporelles
+    DATE_TRUNC('MONTH', t.TRANSACTION_DATE) AS sales_month,
+    DATE_TRUNC('QUARTER', t.TRANSACTION_DATE) AS sales_quarter,
+    DATE_TRUNC('YEAR', t.TRANSACTION_DATE) AS sales_year,
+    DAYOFWEEK(t.TRANSACTION_DATE) AS day_of_week,
+    MONTH(t.TRANSACTION_DATE) AS month_number,
+    
+  -- Informations promotionnelles (jointure sur région et période)
     CASE
-        WHEN p.promotion_id IS NOT NULL THEN 'Yes'
+        WHEN p.PROMOTION_ID IS NOT NULL THEN 'Yes'
         ELSE 'No'
     END AS has_active_promotion,
 
-    p.promotion_id,
-    p.product_category AS promotion_category,
-    p.promotion_type,
-    p.discount_percentage,
-    p.promotion_duration_days,
-
-    -- Indicateurs calculés
+    p.PROMOTION_ID,
+    p.PRODUCT_CATEGORY AS promotion_category,
+    p.PROMOTION_TYPE,
+    p.DISCOUNT_PERCENTAGE,
+    p.PROMOTION_DURATION_DAYS,
+    
+  -- Indicateurs calculés
     CASE
-        WHEN t.amount > 100 THEN 'Valeur Élevée'
-        WHEN t.amount > 50 THEN 'Valeur Moyenne'
+        WHEN t.AMOUNT > 100 THEN 'Valeur Élevée'
+        WHEN t.AMOUNT > 50 THEN 'Valeur Moyenne'
         ELSE 'Valeur Faible'
     END AS transaction_value_segment
 
-FROM SILVER.financial_transactions_clean t
-LEFT JOIN SILVER.promotions_clean p
-    ON t.region = p.region
-    AND t.transaction_date BETWEEN p.start_date AND p.end_date
-WHERE t.transaction_type = 'Sale';
+FROM SILVER.FINANCIAL_TRANSACTIONS_CLEAN t
+LEFT JOIN SILVER.PROMOTIONS_CLEAN p
+    ON t.REGION = p.REGION
+    AND t.TRANSACTION_DATE BETWEEN p.START_DATE AND p.END_DATE
+WHERE t.TRANSACTION_TYPE = 'Sale';
 
 -- Commentaires et documentation
 COMMENT ON TABLE ANALYTICS.enriched_sales IS 'Table analytique des ventes enrichies avec données promotionnelles. Granularité: transaction. Clés: transaction_id, region, transaction_date';
@@ -66,6 +65,7 @@ COMMENT ON COLUMN ANALYTICS.enriched_sales.transaction_value_segment IS 'Segment
 -- Vérifications
 SELECT COUNT(*) AS total_enriched_sales FROM ANALYTICS.enriched_sales;
 SELECT * FROM ANALYTICS.enriched_sales LIMIT 10;
+
 
 -- =====================================================
 -- TABLE 2 : active_promotions

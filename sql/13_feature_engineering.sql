@@ -13,46 +13,68 @@ USE WAREHOUSE ANYCOMPANY_WH;
 -- =====================================================
 
 CREATE OR REPLACE TABLE ANALYTICS.ml_features AS
+WITH base AS (
+    SELECT
+     -- Features temporelles
+        es.transaction_date,
+        es.region,
+        es.amount,
+        es.has_active_promotion,
+        es.discount_percentage,
+        es.promotion_duration_days,
+
+        DATE_TRUNC('MONTH', es.transaction_date) AS feature_month,
+        MONTH(es.transaction_date) AS month,
+        DAYOFWEEK(es.transaction_date) AS day_of_week,
+
+        CASE
+            WHEN DAYOFWEEK(es.transaction_date) IN (1,7) THEN 1 ELSE 0
+        END AS is_weekend,
+-- Features géographiques
+        CASE
+            WHEN es.region IN ('North', 'South') THEN 'Région_Primaire'
+            ELSE 'Région_Secondaire'
+        END AS region_category,
+
+        CASE
+            WHEN es.amount < 25 THEN 'Faible'
+            WHEN es.amount < 75 THEN 'Moyen'
+            ELSE 'Élevé'
+        END AS amount_category
+
+    FROM ANALYTICS.enriched_sales es
+),
+
+monthly_stats AS (
+    SELECT
+        region,
+        feature_month,
+        AVG(amount) AS avg_amount_region_month,
+        COUNT(*) AS transaction_count_region_month
+    FROM base
+    GROUP BY region, feature_month
+)
+
 SELECT
-    -- Features temporelles
-    DATE_TRUNC('MONTH', es.transaction_date) AS feature_month,
-    MONTH(es.transaction_date) AS month,
-    DAYOFWEEK(es.transaction_date) AS day_of_week,
-    CASE
-        WHEN DAYOFWEEK(es.transaction_date) IN (1,7) THEN 1 ELSE 0
-    END AS is_weekend,
+    b.*,
 
-    -- Features géographiques
-    es.region,
-    CASE
-        WHEN es.region IN ('North', 'South') THEN 'Région_Primaire'
-        ELSE 'Région_Secondaire'
-    END AS region_category,
+    -- Ajout des features agrégées
+    m.avg_amount_region_month,
+    m.transaction_count_region_month,
 
-    -- Features promotionnelles
-    CASE WHEN es.has_active_promotion = 'Yes' THEN 1 ELSE 0 END AS has_promotion,
-    COALESCE(es.discount_percentage, 0) AS discount_percentage,
-    COALESCE(es.promotion_duration_days, 0) AS promotion_duration,
+    -- Tendance (mois précédent)
+    LAG(m.avg_amount_region_month)
+        OVER (PARTITION BY b.region ORDER BY b.feature_month)
+        AS prev_month_avg_amount,
 
-    -- Features transactionnelles
-    es.amount AS transaction_amount,
-    CASE
-        WHEN es.amount < 25 THEN 'Faible'
-        WHEN es.amount < 75 THEN 'Moyen'
-        ELSE 'Élevé'
-    END AS amount_category,
+    -- Target ML
+    CASE WHEN b.amount > 100 THEN 1 ELSE 0 END AS high_value_transaction
 
-    -- Agrégats par région et mois (features dérivées)
-    AVG(es.amount) OVER (PARTITION BY es.region, DATE_TRUNC('MONTH', es.transaction_date)) AS avg_amount_region_month,
-    COUNT(*) OVER (PARTITION BY es.region, DATE_TRUNC('MONTH', es.transaction_date)) AS transaction_count_region_month,
+FROM base b
+LEFT JOIN monthly_stats m
+    ON b.region = m.region
+   AND b.feature_month = m.feature_month;
 
-    -- Tendance (comparaison avec mois précédent)
-    LAG(AVG(es.amount)) OVER (PARTITION BY es.region ORDER BY DATE_TRUNC('MONTH', es.transaction_date)) AS prev_month_avg_amount,
-
-    -- Target pour modèles de prédiction (exemple: transaction élevée)
-    CASE WHEN es.amount > 100 THEN 1 ELSE 0 END AS high_value_transaction
-
-FROM ANALYTICS.enriched_sales es;
 
 -- Commentaires
 COMMENT ON TABLE ANALYTICS.ml_features IS 'Table des features préparées pour les modèles ML';
