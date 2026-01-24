@@ -130,3 +130,20 @@ La chaîne logistique est actuellement en mode "réactif" plutôt que "prédicti
 1. **Réapprovisionnement Prioritaire :** Lancer des ordres d'achat d'urgence pour les catégories Boissons et Alimentation Bébé dans les entrepôts du Top 10 des déficits.
 2. **Révision des seuils (Reorder Points) :** Ajuster les seuils de sécurité en fonction de la saisonnalité et des délais de livraison des fournisseurs (Lead Time) pour éviter que le stock ne tombe aussi bas avant le déclenchement d'une commande.
 3. **Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
+
+## 10. Logistique : Performance et Délais de Livraison
+**Référence du script :** `sql/logistics_performance.sql`
+
+**Résultats clés :**
+- **Incohérence des Délais :** Les méthodes **Express** en Asie (7,94 jours) et **International** en Europe (7,93 jours) affichent les délais moyens les plus longs.
+- **Échec de la Promesse Client :** La méthode **Next Day** (lendemain) ne respecte nulle part son nom, avec des délais réels oscillant entre **7,13 jours** (Amérique du Nord) et **7,84 jours** (Océanie).
+- **Volume vs Rapidité :** L'Amérique du Nord concentre le plus grand nombre d'envois en mode **Standard** (203 envois) avec un délai de 7,47 jours, ce qui est paradoxalement plus rapide que certains envois Express en Asie.
+- **Homogénéité Critique :** Il y a très peu de variation entre le mode le plus lent (7,94) et le plus rapide (7,13), ce qui suggère que les options prioritaires ne bénéficient d'aucun traitement de faveur réel dans la chaîne logistique.
+
+**Insight Business :**
+AnyCompany fait face à une crise de crédibilité logistique. Les clients paient probablement un supplément pour des services "Express" ou "Next Day" qui, dans les faits, mettent autant de temps que le service Standard (environ 7 à 8 jours). Cette situation est un moteur majeur d'insatisfaction et explique les mauvaises notes obtenues dans les interactions avec le service client.
+
+**Stratégie :**
+1. **Renégociation des Contrats Transporteurs :** Auditer les prestataires (Carriers) en Asie et Europe pour comprendre pourquoi les envois Express sont plus lents que les envois Standards.
+2. **Alignement Marketing :** Suspendre la facturation premium pour le "Next Day" tant que les délais réels ne sont pas drastiquement réduits, afin d'éviter les plaintes pour publicité mensongère.
+3. **Optimisation Régionale :** Prioriser l'amélioration du hub de distribution en Amérique du Nord, qui possède déjà le volume le plus élevé et les meilleurs délais relatifs, pour en faire un modèle d'efficacité exportable aux autres régions.
