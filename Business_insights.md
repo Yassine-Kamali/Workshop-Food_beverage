@@ -147,3 +147,20 @@ AnyCompany fait face à une crise de crédibilité logistique. Les clients paien
 1. **Renégociation des Contrats Transporteurs :** Auditer les prestataires (Carriers) en Asie et Europe pour comprendre pourquoi les envois Express sont plus lents que les envois Standards.
 2. **Alignement Marketing :** Suspendre la facturation premium pour le "Next Day" tant que les délais réels ne sont pas drastiquement réduits, afin d'éviter les plaintes pour publicité mensongère.
 3. **Optimisation Régionale :** Prioriser l'amélioration du hub de distribution en Amérique du Nord, qui possède déjà le volume le plus élevé et les meilleurs délais relatifs, pour en faire un modèle d'efficacité exportable aux autres régions.
+
+## 11. Analyse de la Satisfaction Produit (Qualité et Avis)
+**Référence du script :** `sql/product_quality_analysis.sql`
+
+**Résultats clés :**
+- **Performance de Masse :** La catégorie **Plant-based Milk Alternatives** est le moteur de satisfaction avec une excellente note de **4,22** sur plus de **422 avis**, confirmant la solidité de ce segment premium.
+- **Alerte Qualité :** Les **Cold-pressed Juices** (Jus pressés à froid) affichent une note décevante de **3,65** pour un volume important (356 avis). C'est le principal point de déception pour les clients réguliers.
+- **Pépite de Croissance :** Les **Ready-to-eat Organic Salads** reçoivent une note exceptionnelle de **4,72**, signalant un fort potentiel de fidélisation si les investissements marketing augmentent sur ce produit.
+- **Données Insuffisantes :** Les Organic Energy Bars (1.00) et Breakfast Cereals (5.00) ne comptent qu'une seule évaluation, ce qui rend ces scores statistiquement non significatifs mais nécessite une attention immédiate pour éviter un mauvais bouche-à-oreille initial.
+
+**Insight Business :**
+Il existe une corrélation directe entre la baisse de parts de marché et la qualité perçue de nos produits à fort volume comme les jus de fruits (3,65). Alors que la concurrence D2C (Direct-to-Consumer) mise sur la fraîcheur, AnyCompany semble stagner sur la qualité de ses boissons phares, ce qui pousse les clients vers des alternatives mieux notées.
+
+**Stratégie :**
+1. **Contrôle Qualité Prioritaire :** Auditer la chaîne de production et la fraîcheur des "Cold-pressed Juices" pour remonter la note au-dessus de 4.0, car c'est une catégorie stratégique pour le CA.
+2. **Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
+3. **Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
