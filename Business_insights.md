@@ -170,3 +170,44 @@ Il existe une corrélation directe entre la baisse de parts de marché et la qua
 **1. Contrôle Qualité Prioritaire :** Auditer la chaîne de production et la fraîcheur des "Cold-pressed Juices" pour remonter la note au-dessus de 4.0, car c'est une catégorie stratégique pour le CA.
 **2. Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
 **3. Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
+
+## 08.Analyse_anomalie
+
+**Objectif :** Évaluer la fiabilité des données du schéma **SILVER** avant l'analyse métier afin de garantir des décisions basées sur des faits exacts.
+
+---
+
+### **1. Intégrité Financière (Montants)**
+*   **Notion de la requête :** Détection de ventes avec des montants négatifs ou nuls (`amount <= 0`).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Les données de revenus sont saines. Il n'y a pas d'erreurs de saisie ou de corruption de données sur les flux de ventes, ce qui garantit la précision des calculs de ROI.
+
+### **2. Cohérence Temporelle (Dates)**
+*   **Notion de la requête :** Identification de transactions ou interactions enregistrées avec des dates dans le futur.
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La chronologie des données est cohérente. Aucun biais temporel ne viendra fausser l'analyse de l'évolution des ventes ou des campagnes.
+
+### **3. Fiabilité Démographique (Âges)**
+*   **Notion de la requête :** Identification d'âges irréalistes chez les clients (moins de 12 ans ou plus de 100 ans).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La base client est démographiquement fiable. Les segmentations par tranches d'âge reflètent la réalité du marché et peuvent être utilisées pour le ciblage marketing.
+
+### **4. Logique de Campagne (Promotions)**
+*   **Notion de la requête :** Vérification des promotions dont la date de fin est antérieure à la date de début.
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Le calendrier promotionnel est logiquement structuré. L'analyse de l'impact des promotions sur les ventes reposera sur des périodes de validité exactes.
+
+### **5. Standardisation des Avis (Satisfaction)**
+*   **Notion de la requête :** Recherche de scores de satisfaction client en dehors de l'échelle standard (1 à 5).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Les données du service client sont correctement normalisées. L'analyse de la satisfaction reflète fidèlement l'expérience des consommateurs.
+
+### **6. Complétude des Données (Valeurs Nulles)**
+*   **Notion de la requête :** Recherche de valeurs manquantes sur les clés de jointure critiques (`customer_id`, `region`).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La connectivité entre les tables est parfaite. Nous ne déplorons aucune perte de données lors des jointures entre les ventes, les clients et les régions.
+
+---
+
+**Conclusion du Diagnostic :**
+Le schéma **SILVER** présente un score de qualité de **100%**. Les données sont certifiées conformes pour l'analyse stratégique. AnyCompany dispose d'un socle de données fiable, prêt à être transformé en insights business et en modèles prédictifs.
