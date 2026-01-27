@@ -30,7 +30,7 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 **Faiblesse en Asie et Europe :** Bien que l'Europe ait un volume de transactions élevé (141), son panier moyen organique est l'un des plus bas (4 785 $), indiquant une sensibilité au prix plus forte ou une offre moins adaptée au segment premium.
 
 **Insight Business :**
-**L'analyse géographique révèle un déséquilibre critique :** AnyCompany est une "marque de fond de placard" qui survit grâce à ses ventes habituelles (organiques), mais qui échoue à dynamiser ses catégories spécifiques via le marketing. Le succès relatif des "Meal Solutions" en Amérique du Nord prouve qu'il existe une demande pour des produits à plus forte valeur ajoutée, mais que cette demande n'est pas exploitée en Europe ou en Asie. L'absence quasi totale de revenus pour les "Organic Snacks" dans la plupart des régions suggère que les nouveaux entrants Digital-First (D2C) ont déjà capturé ce segment plus jeune y plus dynamique.
+L'analyse géographique révèle un déséquilibre critique :AnyCompany est une "marque de fond de placard" qui survit grâce à ses ventes habituelles (organiques), mais qui échoue à dynamiser ses catégories spécifiques via le marketing. Le succès relatif des "Meal Solutions" en Amérique du Nord prouve qu'il existe une demande pour des produits à plus forte valeur ajoutée, mais que cette demande n'est pas exploitée en Europe ou en Asie. L'absence quasi totale de revenus pour les "Organic Snacks" dans la plupart des régions suggère que les nouveaux entrants Digital-First (D2C) ont déjà capturé ce segment plus jeune y plus dynamique.
 
 **Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
