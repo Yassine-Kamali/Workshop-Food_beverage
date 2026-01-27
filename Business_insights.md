@@ -1,6 +1,6 @@
 ## 05_sales_evolution.sql
 ## 1. Évolution des ventes dans le temps
-**Référence du script :** sql/sales_evolution.sql
+**Requête SQL :** 
 
 **Résultats clés :** 
 
@@ -18,7 +18,7 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 
 
 ## 2. Performance par Produit et Région (Sous Promotion)
-**Requête :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
+**Requête SQL :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
 
 **Résultats clés :**
 
@@ -36,7 +36,7 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 **Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
 ## 3. Répartition des clients (Segmentation Multi-dimensionnelle)
-**Requête :** `WITH customer_base AS (...) SELECT region, gender, age_group, income_segment...`
+**Requête SQL :** `WITH customer_base AS (...) SELECT region, gender, age_group, income_segment...`
 
 **Résultats clés :**
 
@@ -56,7 +56,7 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 
 ## 06_marketing_promotion_impact
 ## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
-**Référence du script :** `sql/promotion_comparison.sql`
+**Requête SQL :** `sql/promotion_comparison.sql`
 
 **Résultats clés :**
 - **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)
