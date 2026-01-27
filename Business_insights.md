@@ -1,14 +1,16 @@
 ### 05_descriptive_performance
 ### 1. Évolution des ventes dans le temps
-**Requête :** `SELECT DATE_TRUNC('MONTH', transaction_date)...`
+**Référence du script :** sql/sales_evolution.sql
 
-**Résultats clés :**
-- **Pic le plus haut (2023) :** Mai ($55,573.09)
-- **Point le plus bas (2023) :** Octobre ($13,564.58)
-- **Tendance :** Volatilité critique avec une incapacité à maintenir le niveau de revenus au-dessus de $40k sur le dernier trimestre.
+**Résultats clés :** 
+**Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
+**Chute brutale en 2023 :** Après un pic de performance en Mai (55 573,09 $), le chiffre d'affaires s'est effondré de 75 % pour atteindre son point le plus bas de l'année en Octobre (13 564,58 $).
+**Déficit de récurrence :** Le volume de commandes est passé de 9 transactions mensuelles en moyenne lors des pics à seulement 2 transactions lors des périodes de creux, confirmant une fuite massive de la clientèle.
+**Insight Business :**
+AnyCompany souffre d'une « érosion par intermittence ». Les ventes ne reposent pas sur une demande organique stable, mais semblent dépendre d'événements ponctuels ou de cycles saisonniers mal maîtrisés. Cette fragilité structurelle a permis aux marques Digital-First (D2C) de s'installer : elles captent la récurrence du quotidien que AnyCompany ne parvient plus à sécuriser, transformant nos anciens clients fidèles en acheteurs d'opportunité.
+**Stratégie de redressement :**
+Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher". L'objectif prioritaire pour 2025 est de sécuriser un socle de revenus minimal de 35 000 $/mois. Pour compenser la réduction du budget marketing, AnyCompany doit impérativement lisser cette courbe de volatilité en lançant des programmes de fidélisation ou de réapprovisionnement automatique (abonnement), garantissant ainsi une part de marché stable face à l'agilité des nouveaux entrants.
 
-**Insight Business :** 
-La baisse des ventes n'est pas graduelle, elle est irrégulière. Cela indique une fragilité face à la concurrence. Pour regagner 10 points de part de marché, AnyCompany doit lisser cette courbe et sécuriser un revenu plancher de $35,000/mois via une fidélisation accrue.
 
 
 ### 2. Performance par Produit et Région (Sous Promotion)
