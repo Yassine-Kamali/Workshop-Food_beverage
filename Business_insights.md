@@ -54,20 +54,25 @@ Les données révèlent un risque de "vieillissement" de la marque. AnyCompany p
 **Stratégie de redressement :**
 Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit impérativement rajeunir sa base client sans aliéner son segment premium actuel.
 
-### 06_marketing_promotion_impact
-### 4.Comparaison des Ventes (Avec vs Sans Promotion)
+## 06_marketing_promotion_impact
+## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
 **Référence du script :** `sql/promotion_comparison.sql`
 
 **Résultats clés :**
-- **Volume de ventes :** La grande majorité des transactions sont organiques (947 commandes) contre seulement 42 transactions sous promotion.
-- **Domination des revenus :** Les ventes organiques génèrent 4,74 M$, représentant plus de 95% du chiffre d'affaires total.
-- **Impact sur le Panier Moyen (AOV) :** Le ticket moyen est **plus élevé** lors des promotions (**5 308,83 $**) par rapport aux ventes organiques (**5 009,16 $**), soit une augmentation de **6%**.
+- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6 026,24 $, soit une augmentation de 9,5 % par rapport aux jours de vente organique (5 503,10 $).
+- **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un "LIFT" (incrément) de 6 % de la valeur d'achat.
+- **Volume de Commandes :** On observe une légère hausse du nombre moyen de commandes quotidiennes (passant de 1,10 à 1,14) pendant les périodes promotionnelles.
+- **Fréquence des Offres :** Les promotions n'ont été actives que pendant 37 jours sur un total de 899 jours analysés (environ 4 % du temps).
 
 **Insight Business :**
-Les promotions de AnyCompany ne sont pas perçues comme de simples réductions de prix, mais comme un levier d'**Upselling**. Les clients profitent des offres pour monter en gamme ou acheter des volumes plus importants. Cependant, le très faible nombre de transactions sous promotion indique un manque d'exposition ou de pertinence des offres actuelles.
-
+Les promotions de AnyCompany ne sont pas de simples "braderies" qui détruisent la marge ; elles fonctionnent comme un puissant levier d'Upselling. Le fait que le panier moyen augmente (et non l'inverse) prouve que les clients profitent des offres pour acheter des produits plus premium ou en plus grandes quantités (Volume Buy).
+Cependant, le véritable problème réside dans la sous-exploitation du levier marketing : avec seulement 37 jours de promotion sur près de 3 ans, l'entreprise a laissé ses ventes en mode "pilote automatique" (organique). Cette passivité a laissé le champ libre aux concurrents Digital-First qui, eux, utilisent des promotions dynamiques et fréquentes pour capter l'attention des consommateurs.
 **Stratégie de redressement :**
-Augmenter la fréquence des promotions ciblées. Puisque chaque vente promotionnelle génère en moyenne **300 $ de plus** qu'une vente normale, l'extension de ces campagnes permettra d'augmenter le revenu global et de compenser la réduction du budget marketing.
+
+Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de 30 % :
+- **Augmenter la fréquence des campagnes :** Passer de 4 % à 15-20 % du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
+- **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez le 3ème à -50 %" ou des bundles sur les Organic Meal Solutions.
+- **Rentabilisation du budget :** Au lieu de campagnes d'image de marque coûteuses, AnyCompany doit réallouer ses ressources vers ces promotions à fort ROI, capables de générer une croissance immédiate du chiffre d'affaires et de stabiliser la part de marché.
 
 
 ## 5. Sensibilité des Catégories aux Promotions
