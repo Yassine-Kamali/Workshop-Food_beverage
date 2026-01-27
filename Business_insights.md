@@ -6,9 +6,7 @@
 
 **Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
 
-Le chiffred d'affaires s'est effondré de 75% pour atteindre son point le plus bas de l'année en octobre (13564,58$)
-
-**Chute brutale en 2023 :** Après un pic de performance en Mai (55 573,09 $), le chiffre d'affaires s'est effondré de 75 % pour atteindre son point le plus bas de l'année en Octobre (13 564,58 $).
+**Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires s'est effondré de 75% pour atteindre son point le plus bas de l'année en octobre (13564,58$).
 
 **Déficit de récurrence :** Le volume de commandes est passé de 9 transactions mensuelles en moyenne lors des pics à seulement 2 transactions lors des périodes de creux, confirmant une fuite massive de la clientèle.
 
