@@ -17,18 +17,22 @@ AnyCompany souffre d'une « érosion par intermittence ». Les ventes ne reposen
 Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher". L'objectif prioritaire pour 2025 est de sécuriser un socle de revenus minimal de 35 000 $/mois. Pour compenser la réduction du budget marketing, AnyCompany doit impérativement lisser cette courbe de volatilité en lançant des programmes de fidélisation ou de réapprovisionnement automatique (abonnement), garantissant ainsi une part de marché stable face à l'agilité des nouveaux entrants.
 
 
-
-### 2. Performance par Produit et Région (Sous Promotion)
+## 2. Performance par Produit et Région (Sous Promotion)
 **Requête :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
 
-**Top 3 Performances :**
-1. **North America | Organic Meal Solutions :** $59,064.80 (8 commandes) - Leader incontesté.
-2. **South America | Organic Meal Solutions :** $39,598.77 (7 commandes).
-3. **Asia | Organic Beverages :** $28,489.92 (AOV record de $9,496.64).
+**Résultats clés :**
+**Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768 954 $) sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
+
+**Domination du "Hors-Promotion" :** Dans toutes les régions, plus de 90 % du chiffre d'affaires provient de la « Vente Organique ». Les catégories sous promotion (Beverages, Meal Solutions, Snacks) ne représentent qu'une fraction marginale des revenus totaux.
+
+**Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $) et en Amérique du Sud (39 598 $), avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
+
+**Faiblesse en Asie et Europe :** Bien que l'Europe ait un volume de transactions élevé (141), son panier moyen organique est l'un des plus bas (4 785 $), indiquant une sensibilité au prix plus forte ou une offre moins adaptée au segment premium.
 
 **Insight Business :**
-Le succès de AnyCompany repose sur les "Meal Solutions" en Amérique. Cependant, l'efficacité des promotions est inégale : alors qu'elles boostent les ventes en Amérique, elles génèrent des revenus marginaux pour les "Snacks" en Asie et en Afrique. 
-**Décision :** Réallouer le budget marketing des catégories sous-performantes (Snacks Afrique/Asie) vers le renforcement des "Meal Solutions" en Amérique pour sécuriser la part de marché actuelle.
+**L'analyse géographique révèle un déséquilibre critique :** AnyCompany est une "marque de fond de placard" qui survit grâce à ses ventes habituelles (organiques), mais qui échoue à dynamiser ses catégories spécifiques via le marketing. Le succès relatif des "Meal Solutions" en Amérique du Nord prouve qu'il existe une demande pour des produits à plus forte valeur ajoutée, mais que cette demande n'est pas exploitée en Europe ou en Asie. L'absence quasi totale de revenus pour les "Organic Snacks" dans la plupart des régions suggère que les nouveaux entrants Digital-First (D2C) ont déjà capturé ce segment plus jeune y plus dynamique.
+
+**Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
 ### 3. Répartition des clients (Segmentation Multi-dimensionnelle)
 **Requête :** `WITH customer_base AS (...) SELECT region, gender, age_group, income_segment...`
