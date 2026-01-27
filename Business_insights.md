@@ -4,7 +4,7 @@
 
 - **Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
 
-- **Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires s'est effondré de 75% pour atteindre son point le plus bas de l'année en octobre (13564,58$).
+- **Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires **s'est effondré de 75% **pour atteindre son point le plus bas de l'année en octobre (13564,58$).
 
 - **Déficit de récurrence :** Le volume de commandes est passé de 9 transactions mensuelles en moyenne lors des pics à seulement 2 transactions lors des périodes de creux, confirmant une fuite massive de la clientèle.
 
@@ -12,7 +12,7 @@
 AnyCompany souffre d'une « érosion par intermittence ». Les ventes ne reposent pas sur une demande organique stable, mais semblent dépendre d'événements ponctuels ou de cycles saisonniers mal maîtrisés. Cette fragilité structurelle a permis aux marques Digital-First (D2C) de s'installer : elles captent la récurrence du quotidien que AnyCompany ne parvient plus à sécuriser, transformant nos anciens clients fidèles en acheteurs d'opportunité.
 
 **Stratégie de redressement :**
-Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher". L'objectif prioritaire pour 2025 est de sécuriser un socle de revenus minimal de 35 000 $/mois. Pour compenser la réduction du budget marketing, AnyCompany doit impérativement lisser cette courbe de volatilité en lançant des programmes de fidélisation ou de réapprovisionnement automatique (abonnement), garantissant ainsi une part de marché stable face à l'agilité des nouveaux entrants.
+Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher". L'objectif prioritaire pour 2025 est de sécuriser un socle de **revenus minimal de 35 000 $/mois.** Pour compenser la réduction du budget marketing, AnyCompany doit impérativement lisser cette courbe de volatilité en lançant des programmes de fidélisation ou de réapprovisionnement automatique (abonnement), garantissant ainsi une part de marché stable face à l'agilité des nouveaux entrants.
 
 
 ## 2. Performance par Produit et Région (Sous Promotion)
@@ -34,11 +34,11 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 ## 3. Répartition des clients (Segmentation Multi-dimensionnelle)
 **Résultats clés :**
 
-- **Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de Seniors (>55 ans) et d'Adultes (30-55 ans). Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
+- **Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de **Seniors (>55 ans)** et **d'Adultes (30-55 ans).** Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
 
 - **Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
 
-- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale, soit moins de 10 clients par sous-segment.
+- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, **les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale,**soit moins de 10 clients par sous-segment.
 
 - **Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
 
@@ -53,7 +53,7 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 **Résultats clés :**
 - **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)
   
-- **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un "LIFT" (incrément) de 6 % de la valeur d'achat.
+- **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un **"LIFT" (incrément) de 6 % de la valeur d'achat.**
   
 - **Volume de Commandes :** On observe une légère hausse du nombre moyen de commandes quotidiennes (passant de 1,10 à 1,14) pendant les périodes promotionnelles.
   
