@@ -20,17 +20,18 @@ Objectif : Identifier les zones géographiques ayant une faible performance.
 
 SELECT 
     t.region, 
-    p.product_category, 
+    -- Usamos COALESCE para que si no hay promoción, nos indique que es "Venta Orgánica"
+    COALESCE(p.product_category, 'Vente Organique / Autre') AS product_category, 
     SUM(t.amount) AS total_revenue,
     COUNT(t.transaction_id) AS total_orders,
     ROUND(AVG(t.amount), 2) AS average_order_value
 FROM silver.financial_transactions_clean t
-INNER JOIN silver.promotions_clean p 
+LEFT JOIN silver.promotions_clean p 
     ON t.region = p.region 
     AND t.transaction_date BETWEEN p.start_date AND p.end_date
 WHERE t.transaction_type = 'Sale'
 GROUP BY 1, 2 
-ORDER BY total_revenue DESC;
+ORDER BY t.region, total_revenue DESC;
 
 # /*
 Répartition des clients par segments démographiques
