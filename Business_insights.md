@@ -73,9 +73,9 @@ Pour atteindre l'objectif de +10 points de part de mercado malgré un budget mar
 
 ## 5. Sensibilité des Catégories aux Promotions
 **Résultats clés :**
-- **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
-- **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
-- **Dépendance aux remises :** La catégorie **Organic Beverages** nécessite une remise beaucoup plus agressive (**17,07%**) pour des revenus moindres (73 598 $).
+1. **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
+2. **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
+3. **Dépendance aux remises :** La catégorie **Organic Beverages** nécessite une remise beaucoup plus agressive (**17,07%**) pour des revenus moindres (73 598 $).
 
 **Insight Business :**
 **Organic Meal Solutions** est la catégorie "moteur" de l'entreprise : elle déclenche des achats importants sans sacrifier trop de marge. À l'inverse, les boissons (Beverages) sont très sensibles au prix y consomment trop de budget promotionnel pour un retour sur investissement plus faible.
@@ -121,7 +121,7 @@ Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les 
 **Insight Business :**
 Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) pour des questions à faible valeur ajoutée comme le statut des commandes. Le décalage de satisfaction entre l'Email (3,20) et le Téléphone (2,91) pour une même catégorie montre que le client préfère une information écrite et précise plutôt qu'une attente téléphonique.
 
-**Stratégie :**
+**Stratégie de redressement :**
 1. **Automatisation "Self-Service" :** Implémenter un système de suivi de commande automatisé (chatbot ou portail client) pour réduire les 271 appels téléphoniques, permettant de réallouer le budget vers des experts techniques.
 2. **Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
 3. **Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
