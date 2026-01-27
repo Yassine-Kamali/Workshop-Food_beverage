@@ -3,9 +3,10 @@ Analyse de l’évolution des ventes dans le temps
 -- 1. Évolution mensuelle des ventes pour identifier la baisse
 */
 SELECT
-DATE_TRUNC('MONTH', transaction_date) AS sales_month,
-SUM(amount) AS total_revenue,
-COUNT(transaction_id) AS order_volume
+    DATE_TRUNC('MONTH', transaction_date) AS sales_month,
+    SUM(amount) AS total_revenue,
+    COUNT(transaction_id) AS order_volume, -- Agregada la coma
+    LAG(SUM(amount)) OVER (ORDER BY DATE_TRUNC('MONTH', transaction_date)) AS previous_month_revenue
 FROM silver.financial_transactions_clean
 WHERE transaction_type = 'Sale'
 GROUP BY 1
