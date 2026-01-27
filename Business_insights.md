@@ -1,5 +1,5 @@
 ## 05_sales_evolution.sql
-### 1. Évolution des ventes dans le temps
+## 1. Évolution des ventes dans le temps
 **Référence du script :** sql/sales_evolution.sql
 
 **Résultats clés :** 
