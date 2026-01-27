@@ -65,9 +65,9 @@ Cependant, le véritable problème réside dans la sous-exploitation du levier m
 
 **Stratégie de redressement :**
 
-Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de 30 % :
-1. **Augmenter la fréquence des campagnes :** Passer de 4 % à 15-20 % du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
-2. **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez le 3ème à -50 %" ou des bundles sur les Organic Meal Solutions.
+Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de **30 %** :
+1. **Augmenter la fréquence des campagnes :** Passer de **4 % à 15-20 %** du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
+2. **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez **le 3ème à -50 %"** ou des bundles sur les Organic Meal Solutions.
 3. **Rentabilisation du budget :** Au lieu de campagnes d'image de marque coûteuses, AnyCompany doit réallouer ses ressources vers ces promotions à fort ROI, capables de générer une croissance immédiate du chiffre d'affaires et de stabiliser la part de marché.
 
 
@@ -122,9 +122,9 @@ Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les 
 Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) pour des questions à faible valeur ajoutée comme le statut des commandes. Le décalage de satisfaction entre l'Email (3,20) et le Téléphone (2,91) pour une même catégorie montre que le client préfère une information écrite et précise plutôt qu'une attente téléphonique.
 
 **Stratégie de redressement :**
-1. **Automatisation "Self-Service" :** Implémenter un système de suivi de commande automatisé (chatbot ou portail client) pour réduire les 271 appels téléphoniques, permettant de réallouer le budget vers des experts techniques.
-2. **Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
-3. **Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
+**1. Automatisation "Self-Service" :** Implémenter un système de suivi de commande automatisé (chatbot ou portail client) pour réduire les 271 appels téléphoniques, permettant de réallouer le budget vers des experts techniques.
+**2. Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
+**3. Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
 
  ## 9. Opérations : Analyse des Ruptures de Stock (Risques Logistiques)
 **Résultats clés :**
@@ -136,10 +136,10 @@ Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) p
 **Insight Business :**
 La chaîne logistique est actuellement en mode "réactif" plutôt que "prédictif". Étant donné que AnyCompany est un acteur majeur du secteur Food & Beverage, avoir des ruptures massives sur les catégories **Beverages** (cœur de métier) et **Baby Food** (haute fidélité) est critique. Ces ruptures expliquent probablement une partie de la baisse de la part de marché (de 28% à 22%), car le produit n'est simplement pas disponible en rayon.
 
-**Stratégie :**
-1. **Réapprovisionnement Prioritaire :** Lancer des ordres d'achat d'urgence pour les catégories Boissons et Alimentation Bébé dans les entrepôts du Top 10 des déficits.
-2. **Révision des seuils (Reorder Points) :** Ajuster les seuils de sécurité en fonction de la saisonnalité et des délais de livraison des fournisseurs (Lead Time) pour éviter que le stock ne tombe aussi bas avant le déclenchement d'une commande.
-3. **Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
+**Stratégie de redressement :**
+**1. Réapprovisionnement Prioritaire :** Lancer des ordres d'achat d'urgence pour les catégories Boissons et Alimentation Bébé dans les entrepôts du Top 10 des déficits.
+**2. Révision des seuils (Reorder Points) :** Ajuster les seuils de sécurité en fonction de la saisonnalité et des délais de livraison des fournisseurs (Lead Time) pour éviter que le stock ne tombe aussi bas avant le déclenchement d'une commande.
+**3. Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
 
 ## 10. Logistique : Performance et Délais de Livraison
 **Résultats clés :**
@@ -151,7 +151,7 @@ La chaîne logistique est actuellement en mode "réactif" plutôt que "prédicti
 **Insight Business :**
 AnyCompany fait face à une crise de crédibilité logistique. Les clients paient probablement un supplément pour des services "Express" ou "Next Day" qui, dans les faits, mettent autant de temps que le service Standard (environ 7 à 8 jours). Cette situation est un moteur majeur d'insatisfaction et explique les mauvaises notes obtenues dans les interactions avec le service client.
 
-**Stratégie :**
+**Stratégie de redressement :**
 1. **Renégociation des Contrats Transporteurs :** Auditer les prestataires (Carriers) en Asie et Europe pour comprendre pourquoi les envois Express sont plus lents que les envois Standards.
 2. **Alignement Marketing :** Suspendre la facturation premium pour le "Next Day" tant que les délais réels ne sont pas drastiquement réduits, afin d'éviter les plaintes pour publicité mensongère.
 3. **Optimisation Régionale :** Prioriser l'amélioration du hub de distribution en Amérique du Nord, qui possède déjà le volume le plus élevé et les meilleurs délais relatifs, pour en faire un modèle d'efficacité exportable aux autres régions.
@@ -166,7 +166,7 @@ AnyCompany fait face à une crise de crédibilité logistique. Les clients paien
 **Insight Business :**
 Il existe une corrélation directe entre la baisse de parts de marché et la qualité perçue de nos produits à fort volume comme les jus de fruits (3,65). Alors que la concurrence D2C (Direct-to-Consumer) mise sur la fraîcheur, AnyCompany semble stagner sur la qualité de ses boissons phares, ce qui pousse les clients vers des alternatives mieux notées.
 
-**Stratégie :**
-1. **Contrôle Qualité Prioritaire :** Auditer la chaîne de production et la fraîcheur des "Cold-pressed Juices" pour remonter la note au-dessus de 4.0, car c'est une catégorie stratégique pour le CA.
-2. **Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
-3. **Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
+**Stratégie de redressement :**
+**1. Contrôle Qualité Prioritaire :** Auditer la chaîne de production et la fraîcheur des "Cold-pressed Juices" pour remonter la note au-dessus de 4.0, car c'est une catégorie stratégique pour le CA.
+**2. Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
+**3. Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
