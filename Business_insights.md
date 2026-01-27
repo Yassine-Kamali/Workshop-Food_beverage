@@ -66,16 +66,16 @@ Cependant, le véritable problème réside dans la sous-exploitation du levier m
 **Stratégie de redressement :**
 
 Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de 30 % :
-- **Augmenter la fréquence des campagnes :** Passer de 4 % à 15-20 % du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
-- **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez le 3ème à -50 %" ou des bundles sur les Organic Meal Solutions.
-- **Rentabilisation du budget :** Au lieu de campagnes d'image de marque coûteuses, AnyCompany doit réallouer ses ressources vers ces promotions à fort ROI, capables de générer une croissance immédiate du chiffre d'affaires et de stabiliser la part de marché.
+1. **Augmenter la fréquence des campagnes :** Passer de 4 % à 15-20 % du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
+2. **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez le 3ème à -50 %" ou des bundles sur les Organic Meal Solutions.
+3. **Rentabilisation du budget :** Au lieu de campagnes d'image de marque coûteuses, AnyCompany doit réallouer ses ressources vers ces promotions à fort ROI, capables de générer une croissance immédiate du chiffre d'affaires et de stabiliser la part de marché.
 
 
 ## 5. Sensibilité des Catégories aux Promotions
 **Résultats clés :**
-1. **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
-2. **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
-3. **Dépendance aux remises :** La catégorie **Organic Beverages** nécessite une remise beaucoup plus agressive (**17,07%**) pour des revenus moindres (73 598 $).
+- **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
+- **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
+- **Dépendance aux remises :** La catégorie **Organic Beverages** nécessite une remise beaucoup plus agressive (**17,07%**) pour des revenus moindres (73 598 $).
 
 **Insight Business :**
 **Organic Meal Solutions** est la catégorie "moteur" de l'entreprise : elle déclenche des achats importants sans sacrifier trop de marge. À l'inverse, les boissons (Beverages) sont très sensibles au prix y consomment trop de budget promotionnel pour un retour sur investissement plus faible.
