@@ -4,7 +4,7 @@
 
 - **Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
 
-- **Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires **s'est effondré de 75% **pour atteindre son point le plus bas de l'année en octobre (13564,58$).
+- **Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires **s'est effondré de 75%** pour atteindre son point le plus bas de l'année en octobre (13564,58$).
 
 - **Déficit de récurrence :** Le volume de commandes est passé de 9 transactions mensuelles en moyenne lors des pics à seulement 2 transactions lors des périodes de creux, confirmant une fuite massive de la clientèle.
 
@@ -38,7 +38,7 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 
 - **Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
 
-- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, **les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale,**soit moins de 10 clients par sous-segment.
+- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, **les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale,** soit moins de 10 clients par sous-segment.
 
 - **Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
 
