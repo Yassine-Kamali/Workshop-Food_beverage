@@ -48,7 +48,7 @@ Les données révèlent un risque de "vieillissement" de la marque. AnyCompany p
 **Stratégie de redressement :**
 Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit impérativement rajeunir sa base client sans aliéner son segment premium actuel.
 
-## 06_marketing_promotion_impact
+## 06_marketing_promotion_impact.sql
 ## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
 **Résultats clés :**
 - **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)
@@ -109,7 +109,7 @@ Il existe une opportunité majeure d'optimisation. La **Radio** et la **TV** son
 **Stratégie de redressement :**
 Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les investissements en Radio** et réduire drastiquement la TV. La réallocation de ces fonds vers les **Influenceurs et le Content Marketing** permettra de maintenir le volume d'acquisition tout en réduisant les coûts fixes, sécurisant ainsi l'objectif de reconquête de part de marché.
 
-## 07_Expérience Client & Opérations
+## 07_Expérience Client & Opérations.sql
 
 ## 8. Service Client : Analyse des Interactions (Volume vs Satisfaction)
 **Résultats clés :**
