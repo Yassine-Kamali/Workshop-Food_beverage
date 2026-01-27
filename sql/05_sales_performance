@@ -1,7 +1,7 @@
-# /*
+### /*
 Analyse de l’évolution des ventes dans le temps
 -- 1. Évolution mensuelle des ventes pour identifier la baisse
-*/
+*/###
 SELECT
     DATE_TRUNC('MONTH', transaction_date) AS sales_month,
     SUM(amount) AS total_revenue,
