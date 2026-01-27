@@ -51,11 +51,11 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 ## 06_marketing_promotion_impact.sql
 ## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
 **Résultats clés :**
-- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)
+- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une **augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)**
   
 - **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un **"LIFT" (incrément) de 6 % de la valeur d'achat.**
   
-- **Volume de Commandes :** On observe une légère hausse du nombre moyen de commandes quotidiennes (passant de 1,10 à 1,14) pendant les périodes promotionnelles.
+- **Volume de Commandes :** On observe une légère hausse du nombre moyen de commandes quotidiennes **(passant de 1,10 à 1,14)** pendant les périodes promotionnelles.
   
 - **Fréquence des Offres :** Les promotions n'ont été actives que pendant 37 jours sur un total de 899 jours analysés (environ 4 % du temps).
 
