@@ -7,9 +7,13 @@ SELECT
         WHEN p.promotion_id IS NOT NULL THEN 'Vente sous Promotion' 
         ELSE 'Vente Organique (Sans Promo)' 
     END AS sales_type,
-    COUNT(t.transaction_id) AS order_count,
-    SUM(t.amount) AS total_revenue,
-    ROUND(AVG(t.amount), 2) AS avg_ticket
+    -- 1.Nombre moyen de commandes par jour
+    ROUND(COUNT(t.transaction_id) / NULLIF(COUNT(DISTINCT t.transaction_date), 0), 2) AS avg_daily_orders,
+    -- 2.Chiffre d’affaires quotidien moyen (Vente quotidienne moyenne)
+    ROUND(SUM(t.amount) / NULLIF(COUNT(DISTINCT t.transaction_date), 0), 2) AS avg_daily_revenue,
+    -- 3.Panier moyen par transaction (pour comparer si le client dépense plus au total lors des promos)
+    ROUND(AVG(t.amount), 2) AS avg_ticket_per_transaction,
+    COUNT(DISTINCT t.transaction_date) AS total_days_analyzed
 FROM silver.financial_transactions_clean t
 LEFT JOIN silver.promotions_clean p 
     ON t.region = p.region 
