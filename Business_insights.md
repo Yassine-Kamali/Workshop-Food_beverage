@@ -21,16 +21,15 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 **Requête :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
 
 **Résultats clés :**
-**Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768 954 $) sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
+**Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768.954$)sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
 
 **Domination du "Hors-Promotion" :** Dans toutes les régions, plus de 90 % du chiffre d'affaires provient de la « Vente Organique ». Les catégories sous promotion (Beverages, Meal Solutions, Snacks) ne représentent qu'une fraction marginale des revenus totaux.
 
-**Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $) et en Amérique du Sud (39 598 $), avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
+**Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $) et en Amérique du Sud (39.598$), avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
 
 **Faiblesse en Asie et Europe :** Bien que l'Europe ait un volume de transactions élevé (141), son panier moyen organique est l'un des plus bas (4 785 $), indiquant une sensibilité au prix plus forte ou une offre moins adaptée au segment premium.
 
 **Insight Business :**
-
 L'analyse géographique révèle un déséquilibre critique : AnyCompany est une "marque de fond de placard" qui survit grâce à ses ventes habituelles (organiques), mais qui échoue à dynamiser ses catégories spécifiques via le marketing. Le succès relatif des "Meal Solutions" en Amérique du Nord prouve qu'il existe une demande pour des produits à plus forte valeur ajoutée, mais que cette demande n'est pas exploitée en Europe ou en Asie. L'absence quasi totale de revenus pour les "Organic Snacks" dans la plupart des régions suggère que les nouveaux entrants Digital-First (D2C) ont déjà capturé ce segment plus jeune y plus dynamique.
 
 **Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
