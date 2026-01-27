@@ -35,17 +35,24 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 
 **Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
-### 3. Répartition des clients (Segmentation Multi-dimensionnelle)
+## 3. Répartition des clients (Segmentation Multi-dimensionnelle)
 **Requête :** `WITH customer_base AS (...) SELECT region, gender, age_group, income_segment...`
 
 **Résultats clés :**
-- **Segment Dominant :** Seniors (>55 ans) et Adultes (30-55 ans) avec "High Income".
-- **Top Cluster :** South America | Female | Seniors | High Income (1.14% de la base totale).
-- **Point Faible :** Le segment "Youth (<30 ans)" est quasi inexistant (<0.20% par région en moyenne).
+
+**Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de Seniors (>55 ans) et d'Adultes (30-55 ans). Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
+
+**Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
+
+**Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale, soit moins de 10 clients par sous-segment.
+
+**Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
 
 **Insight Business :**
-AnyCompany est une marque de "niche premium" pour les clients mûrs. La perte de part de marché (de 28% à 22%) s'explique par l'incapacité de la marque à attirer les nouvelles générations qui préfèrent les startups D2C. 
-**Stratégie de redressement :** Utiliser les modèles ML de la Phase 3 pour identifier les attributs produits qui pourraient convertir le segment "Youth" sans cannibaliser la marge des segments "Senior" actuels.
+Les données révèlent un risque de "vieillissement" de la marque. AnyCompany possède une base solide de clients fidèles et aisés (Seniors/Adultes High Income), ce qui explique la stabilité des ventes organiques. Cependant, l'absence quasi totale de la génération "Youth" (<30 ans) est une faille critique. C'est précisément sur ce segment que les startups Digital-First et les marques D2C (Direct-to-Consumer) ont gagné 6 points de part de marché : elles captent les nouveaux consommateurs que AnyCompany ne parvient pas à séduire. Si la tendance continue, la base client de AnyCompany va naturellement s'éroder sans renouvellement.
+
+**Stratégie de redressement :**
+Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit impérativement rajeunir sa base client sans aliéner son segment premium actuel.
 
 ### 06_marketing_promotion_impact
 ### 4.Comparaison des Ventes (Avec vs Sans Promotion)
