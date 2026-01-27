@@ -59,7 +59,7 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 **Référence du script :** `sql/promotion_comparison.sql`
 
 **Résultats clés :**
-- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6 026,24 $, soit une augmentation de 9,5% par rapport aux jours de vente organique (5 503,10 $).
+- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% pqr rapport aux jours de ventes organique (5.503,10$)
   
 - **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un "LIFT" (incrément) de 6 % de la valeur d'achat.
   
@@ -70,6 +70,7 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 **Insight Business :**
 Les promotions de AnyCompany ne sont pas de simples "braderies" qui détruisent la marge ; elles fonctionnent comme un puissant levier d'Upselling. Le fait que le panier moyen augmente (et non l'inverse) prouve que les clients profitent des offres pour acheter des produits plus premium ou en plus grandes quantités (Volume Buy).
 Cependant, le véritable problème réside dans la sous-exploitation du levier marketing : avec seulement 37 jours de promotion sur près de 3 ans, l'entreprise a laissé ses ventes en mode "pilote automatique" (organique). Cette passivité a laissé le champ libre aux concurrents Digital-First qui, eux, utilisent des promotions dynamiques et fréquentes pour capter l'attention des consommateurs.
+
 **Stratégie de redressement :**
 
 Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de 30 % :
