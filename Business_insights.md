@@ -26,7 +26,7 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 
 **Domination du "Hors-Promotion" :** Dans toutes les régions, plus de 90 % du chiffre d'affaires provient de la « Vente Organique ». Les catégories sous promotion (Beverages, Meal Solutions, Snacks) ne représentent qu'une fraction marginale des revenus totaux.
 
-**Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $) et en Amérique du sud (39.598$) avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
+**Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $)  et  en  Amérique  du  sud  (39.598$) avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
 
 **Faiblesse en Asie et Europe :** Bien que l'Europe ait un volume de transactions élevé (141), son panier moyen organique est l'un des plus bas (4 785 $), indiquant une sensibilité au prix plus forte ou une offre moins adaptée au segment premium.
 
