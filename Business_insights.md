@@ -21,6 +21,7 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 **Requête :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
 
 **Résultats clés :**
+**Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord
 **Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768.954$)sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
 
 **Domination du "Hors-Promotion" :** Dans toutes les régions, plus de 90 % du chiffre d'affaires provient de la « Vente Organique ». Les catégories sous promotion (Beverages, Meal Solutions, Snacks) ne représentent qu'une fraction marginale des revenus totaux.
