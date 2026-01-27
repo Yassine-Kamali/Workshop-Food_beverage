@@ -1,7 +1,5 @@
 ## 05_sales_evolution.sql
 ## 1. Évolution des ventes dans le temps
-**Requête SQL :** 
-
 **Résultats clés :** 
 
 - **Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
@@ -18,8 +16,6 @@ Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher
 
 
 ## 2. Performance par Produit et Région (Sous Promotion)
-**Requête SQL :** `SELECT t.region, p.product_category, SUM(t.amount)... INNER JOIN silver.promotions_clean...`
-
 **Résultats clés :**
 
 - **Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768.954$) sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
@@ -36,8 +32,6 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 **Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
 ## 3. Répartition des clients (Segmentation Multi-dimensionnelle)
-**Requête SQL :** `WITH customer_base AS (...) SELECT region, gender, age_group, income_segment...`
-
 **Résultats clés :**
 
 - **Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de Seniors (>55 ans) et d'Adultes (30-55 ans). Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
@@ -56,8 +50,6 @@ Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit imp�
 
 ## 06_marketing_promotion_impact
 ## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
-**Requête SQL :** `sql/promotion_comparison.sql`
-
 **Résultats clés :**
 - **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)
   
@@ -80,8 +72,6 @@ Pour atteindre l'objectif de +10 points de part de mercado malgré un budget mar
 
 
 ## 5. Sensibilité des Catégories aux Promotions
-**Référence du script :** `sql/category_sensitivity.sql`
-
 **Résultats clés :**
 - **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
 - **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
@@ -94,8 +84,6 @@ Pour atteindre l'objectif de +10 points de part de mercado malgré un budget mar
 Prioriser les remises sur les **Meal Solutions** pour maximiser le chiffre d'affaires immédiat. Pour les catégories moins performantes comme les Snacks ou Beverages, tester des stratégies de "Bundling" (offres groupées) avec les repas au lieu de faire des remises directes qui érodent la rentabilité.
 
 ## 6. Performance des Campagnes Marketing (Lien Budget vs Conversion)
-**Référence du script :** `sql/campaign_impact.sql`
-
 **Résultats clés :**
 - **Allocation Budgétaire :** Les budgets les plus massifs sont alloués au **Personal Care via Email** (32,4 M$) et à l'**Electronique via Social Media** (31,3 M$).
 - **Champions de la Conversion :** Le taux de conversion le plus élevé est détenu par le **Baby Food via Influencer (6,11%)**, suivi de près par les **Beverages via Content Marketing (6,00%)**.
@@ -109,8 +97,6 @@ L'investissement n'est pas toujours aligné sur la performance. Nous sur-investi
 Pour respecter la baisse de 30% du budget marketing, il est impératif de **réallouer les fonds** des canaux TV/Radio vers le **Marketing d'Influence et de Contenu**. Nous recommandons de réduire de 20% le budget Email du Personal Care pour le réinjecter dans le segment Baby Food/Influencers, où le potentiel de conversion est maximal.
 
 ## 7. Identification des Campagnes les plus efficaces (ROI)
-**Référence du script :** `sql/campaign_roi.sql`
-
 **Résultats clés :**
 - **Canal le plus rentable :** Le **Marketing d'Influence** affiche le coût par conversion le plus bas du marché (**8,71 $**).
 - **Efficacité du Contenu :** Le **Content Marketing** suit de près avec un coût de **8,83 $**, confirmant que l'engagement organique est très économique.
@@ -126,8 +112,6 @@ Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les 
 ## 07_Expérience Client & Opérations
 
 ## 8. Service Client : Analyse des Interactions (Volume vs Satisfaction)
-**Référence du script :** `sql/customer_service_analysis.sql`
-
 **Résultats clés :**
 - **Canaux les plus sollicités :** Les **Plaintes par Email** (289 interactions) et les **Demandes de produits par Chat** (276) dominent le flux de travail du service client.
 - **Pic de Satisfaction :** Le suivi de commande (**Order Status**) via **Email** enregistre le score de satisfaction le plus élevé (**3,20**), suivi de près par les retours sur les réseaux sociaux (3,17).
@@ -143,8 +127,6 @@ Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) p
 3. **Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
 
  ## 9. Opérations : Analyse des Ruptures de Stock (Risques Logistiques)
-**Référence du script :** `sql/inventory_stockout_analysis.sql`
-
 **Résultats clés :**
 - **Déficit Critique :** L'entrepôt **Wright-Warren** présente le déficit le plus alarmant pour la catégorie **Snacks** avec un manque de **388 unités** par rapport au seuil de réapprovisionnement.
 - **Catégories les plus exposées :** Les **Boissons (Beverages)** et l'**Alimentation Bébé (Baby Food)** sont les catégories qui apparaissent le plus fréquemment en situation de sous-stock critique.
@@ -160,8 +142,6 @@ La chaîne logistique est actuellement en mode "réactif" plutôt que "prédicti
 3. **Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
 
 ## 10. Logistique : Performance et Délais de Livraison
-**Référence du script :** `sql/logistics_performance.sql`
-
 **Résultats clés :**
 - **Incohérence des Délais :** Les méthodes **Express** en Asie (7,94 jours) et **International** en Europe (7,93 jours) affichent les délais moyens les plus longs.
 - **Échec de la Promesse Client :** La méthode **Next Day** (lendemain) ne respecte nulle part son nom, avec des délais réels oscillant entre **7,13 jours** (Amérique du Nord) et **7,84 jours** (Océanie).
@@ -177,8 +157,6 @@ AnyCompany fait face à une crise de crédibilité logistique. Les clients paien
 3. **Optimisation Régionale :** Prioriser l'amélioration du hub de distribution en Amérique du Nord, qui possède déjà le volume le plus élevé et les meilleurs délais relatifs, pour en faire un modèle d'efficacité exportable aux autres régions.
 
 ## 11. Analyse de la Satisfaction Produit (Qualité et Avis)
-**Référence du script :** `sql/product_quality_analysis.sql`
-
 **Résultats clés :**
 - **Performance de Masse :** La catégorie **Plant-based Milk Alternatives** est le moteur de satisfaction avec une excellente note de **4,22** sur plus de **422 avis**, confirmant la solidité de ce segment premium.
 - **Alerte Qualité :** Les **Cold-pressed Juices** (Jus pressés à froid) affichent une note décevante de **3,65** pour un volume important (356 avis). C'est le principal point de déception pour les clients réguliers.
