@@ -40,13 +40,13 @@ L'analyse géographique révèle un déséquilibre critique : AnyCompany est une
 
 **Résultats clés :**
 
-**Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de Seniors (>55 ans) et d'Adultes (30-55 ans). Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
+- **Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de Seniors (>55 ans) et d'Adultes (30-55 ans). Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
 
-**Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
+- **Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
 
-**Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale, soit moins de 10 clients par sous-segment.
+- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale, soit moins de 10 clients par sous-segment.
 
-**Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
+- **Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
 
 **Insight Business :**
 Les données révèlent un risque de "vieillissement" de la marque. AnyCompany possède une base solide de clients fidèles et aisés (Seniors/Adultes High Income), ce qui explique la stabilité des ventes organiques. Cependant, l'absence quasi totale de la génération "Youth" (<30 ans) est une faille critique. C'est précisément sur ce segment que les startups Digital-First et les marques D2C (Direct-to-Consumer) ont gagné 6 points de part de marché : elles captent les nouveaux consommateurs que AnyCompany ne parvient pas à séduire. Si la tendance continue, la base client de AnyCompany va naturellement s'éroder sans renouvellement.
