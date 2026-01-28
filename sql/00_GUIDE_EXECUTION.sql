@@ -140,39 +140,3 @@ SELECT
 FROM SILVER.promotions_clean
 GROUP BY product_category
 ORDER BY promo_count DESC;
-
--- =====================================================
--- FÉLICITATIONS !
--- La Phase 1 est terminée avec succès
--- Vous pouvez maintenant passer à la Phase 2
--- =====================================================
-
--- ⚠️ RAPPEL : Suspension du warehouse
--- Pour économiser vos crédits, assurez-vous que l'auto-suspend est activé
-SHOW WAREHOUSES LIKE 'ANYCOMPANY_WH';
-
--- Pour suspendre manuellement le warehouse :
-ALTER WAREHOUSE ANYCOMPANY_WH SUSPEND;
-
--- =====================================================
--- COMMANDES UTILES POUR LA SUITE
--- =====================================================
-
--- Se connecter au contexte du projet
-USE DATABASE ANYCOMPANY_LAB;
-USE SCHEMA SILVER;
-USE WAREHOUSE ANYCOMPANY_WH;
-
--- Voir la structure d'une table
-DESCRIBE TABLE SILVER.customer_demographics_clean;
-
--- Obtenir un échantillon aléatoire
-SELECT * FROM SILVER.financial_transactions_clean SAMPLE (100 ROWS);
-
--- Obtenir les statistiques d'une colonne
-SELECT 
-    MIN(amount) AS min_amount,
-    MAX(amount) AS max_amount,
-    AVG(amount) AS avg_amount,
-    MEDIAN(amount) AS median_amount
-FROM SILVER.financial_transactions_clean;
