@@ -1,328 +1,213 @@
-# 📊 Synthèse des Constats Business - AnyCompany Food & Beverage
+## 05_sales_evolution.sql
+## 1. Évolution des ventes dans le temps
+**Résultats clés :** 
 
-*Analyse data-driven basée sur les données transactionnelles, promotionnelles et clients*
+- **Instabilité chronique :** Les revenus affichent une volatilité extrême, oscillant historiquement entre des sommets à plus de 60 000 $ (ex: Nov. 2013, Mai 2022) et des creux critiques sous la barre des 15 000 $.
 
----
+- **Chute brutale en 2023 :** Après un pic de performance en Mai (55.573,09$), le chiffred d'affaires **s'est effondré de 75%** pour atteindre son point le plus bas de l'année en octobre (13564,58$).
 
-## 🎯 Executive Summary
+- **Déficit de récurrence :** Le volume de commandes est passé de 9 transactions mensuelles en moyenne lors des pics à seulement 2 transactions lors des périodes de creux, confirmant une fuite massive de la clientèle.
 
-Cette synthèse présente les constats clés, leur interprétation métier, leur impact potentiel sur la stratégie marketing et les recommandations stratégiques pour optimiser la performance marketing et commerciale d'**AnyCompany Food & Beverage**.
+**Insight Business :**
+AnyCompany souffre d'une « érosion par intermittence ». Les ventes ne reposent pas sur une demande organique stable, mais semblent dépendre d'événements ponctuels ou de cycles saisonniers mal maîtrisés. Cette fragilité structurelle a permis aux marques Digital-First (D2C) de s'installer : elles captent la récurrence du quotidien que AnyCompany ne parvient plus à sécuriser, transformant nos anciens clients fidèles en acheteurs d'opportunité.
 
----
+**Stratégie de redressement :**
+Passer d'une stratégie de "pics de vente" à une stratégie de "revenu plancher". L'objectif prioritaire pour 2025 est de sécuriser un socle de **revenus minimal de 35 000 $/mois.** Pour compenser la réduction du budget marketing, AnyCompany doit impérativement lisser cette courbe de volatilité en lançant des programmes de fidélisation ou de réapprovisionnement automatique (abonnement), garantissant ainsi une part de marché stable face à l'agilité des nouveaux entrants.
 
-## 1️⃣ CONSTATS CLÉS
 
-### 1.1 Performance des Ventes & Tendances
+## 2. Performance par Produit et Région (Sous Promotion)
+**Résultats clés :**
 
-#### **Constat : Évolution mensuelle des revenus avec volatilité identifiée**
-- **Observation** : Variation des ventes mensuelles (SUM de `transaction_date` par mois)
-- **Data source** : `silver.financial_transactions_clean` - analyse temporelle par région
-- **Impact** : Identification des mois pics/creux essentiels pour la planification
+- **Zones de force (Cash Cows) :** L'Amérique du Sud (780 266 $) et l'Amérique du Nord (768.954$) sont les moteurs de croissance, affichant les revenus organiques et les paniers moyens (AOV) les plus élevés du groupe (supérieurs à 5 200 $).
 
-### 1.2 Efficacité des Promotions
+- **Domination du "Hors-Promotion" :** Dans toutes les régions, plus de 90 % du chiffre d'affaires provient de la « Vente Organique ». Les catégories sous promotion (Beverages, Meal Solutions, Snacks) ne représentent qu'une fraction marginale des revenus totaux.
 
-#### **Constat : ROI promotionnel mitigé - L'effet "cannibilisation"**
-- **Observation clé** : Comparaison ventes avec/sans promotion
-  - Jours AVEC promotion : Moyenne vente quotidienne = X€
-  - Jours SANS promotion : Moyenne vente quotidienne = Y€
-  - **Écart ≠ Généralement négatif** : Les promotions ne génèrent pas nécessairement de ventes supplémentaires
-- **Problématique identifiée** : Clients profitent de remises sur des achats programmés (effet de redistribution)
-- **Data source** : Analyse temporelle croisée `transaction_date` × `promo_days`
+- **Potentiel des "Organic Meal Solutions" :** C'est la catégorie promotionnelle la plus performante, particulièrement en Amérique du Nord (59 064 $) et  en  Amérique  du  sud  (39.598$) avec des paniers moyens très compétitifs (jusqu'à 7 383 $).
 
-### 1.3 Qualité Produit & Satisfaction Client
+- **Faiblesse en Asie et Europe :** Bien que l'Europe ait un volume de transactions élevé (141), son panier moyen organique est l'un des plus bas (4 785 $), indiquant une sensibilité au prix plus forte ou une offre moins adaptée au segment premium.
 
-#### **Constat : Problèmes de service client affectant la rétention**
-- **Observation** : Certaines catégories d'incident ont des taux de résolution faibles
-- **Patterns identifiés** :
-  - Issues non résolues = satisfaction basse (< 3.5/5)
-  - Les problèmes logistiques/livraison génèrent le plus de cas
-  - Temps de résolution corrélé négativement à la satisfaction
-- **Data source** : `silver.customer_service_interactions_clean`
-- **Mesures** : `issue_category`, `resolution_status`, `avg(customer_satisfaction)`
+**Insight Business :**
+L'analyse géographique révèle un déséquilibre critique : AnyCompany est une "marque de fond de placard" qui survit grâce à ses ventes habituelles (organiques), mais qui échoue à dynamiser ses catégories spécifiques via le marketing. Le succès relatif des "Meal Solutions" en Amérique du Nord prouve qu'il existe une demande pour des produits à plus forte valeur ajoutée, mais que cette demande n'est pas exploitée en Europe ou en Asie. L'absence quasi totale de revenus pour les "Organic Snacks" dans la plupart des régions suggère que les nouveaux entrants Digital-First (D2C) ont déjà capturé ce segment plus jeune y plus dynamique.
 
-### 1.4 Segmentation & Comportements Clients
+**Stratégie de redressement :** Pour regagner 10 points de part de marché, AnyCompany doit sortir de sa dépendance aux ventes organiques passives.
 
-#### **Constat : Segments de clients avec propensions différentes**
-- **Observation** : Analyse ML révèle 3-4 segments distincts
-  - Segment 1 : Clients fidèles (retention élevée)
-  - Segment 2 : Clients sensibles au prix (volume bas, marge faible)
-  - Segment 3 : Clients "opportunistes" (réactifs aux promos)
-  - Segment 4 : Clients à risque (faible engagement, prédicteurs de churn)
-- **Data source** : `customer_segmentation.ipynb` - K-Means ou clustering
-- **Utilité** : Permet un ciblage marketing personnalisé
+## 3. Répartition des clients (Segmentation Multi-dimensionnelle)
+**Résultats clés :**
 
-## 2️⃣ INTERPRÉTATION MÉTIER
+- **Domination des Seniors et Adultes :** Le cœur de cible actuel de AnyCompany est composé de **Seniors (>55 ans)** et **d'Adultes (30-55 ans).** Par exemple, en Amérique du Sud, les femmes seniors à hauts revenus représentent le groupe le plus important (57 clients).
 
-### 2.1 Ventes & Performance Commerciale (Constat A)
+- **Profil de Revenus Élevés :** La grande majorité de la base client appartient aux segments "High Income" (Revenus élevés) et "Medium Income" (Revenus moyens). Le segment "Low Income" est minoritaire dans toutes les régions, ce qui confirme le positionnement "Premium" de la marque.
 
-**📌 Situation actuelle :**
-- La volatilité mensuelle des revenus suggère une exposition à la saisonnalité
-- Variation significative des ventes par mois et par région
-- **Risque** : Exposition aux chocs saisonniers sans stratégie d'amortissement
+- **Le "Défi Jeunesse" :** Le segment des Jeunes (<30 ans) est extrêmement sous-représenté. Dans des régions clés comme l'Europe ou l'Amérique du Nord, **les jeunes à faibles revenus ne représentent que 0,06 % à 0,14 % de la base totale,** soit moins de 10 clients par sous-segment.
 
-**💡 Interprétation métier :**
-1. **Planification améliorée** : Prédire les pics/creux saisonniers
-   - Adapter les stocks en amont des périodes de forte demande
-   - Planifier les campagnes marketing aux périodes optimales
-   - Préparer des offres contra-cycliques pour les périodes creuses
+- **Répartition Géographique :** L'Europe et l'Amérique du Sud affichent une forte présence de clientèle féminine (Adultes/Seniors), tandis que l'Amérique du Nord présente un profil plus équilibré entre les genres dans le segment Adulte.
 
-2. **Opportunité opérationnelle** : Optimiser la chaîne d'approvisionnement
-   - Réduire les sur-stocks pendant les creux
-   - Éviter les ruptures lors des pics de demande
-   - Améliorer la trésorerie grâce à une meilleure prévision
+**Insight Business :**
+Les données révèlent un risque de "vieillissement" de la marque. AnyCompany possède une base solide de clients fidèles et aisés (Seniors/Adultes High Income), ce qui explique la stabilité des ventes organiques. Cependant, l'absence quasi totale de la génération "Youth" (<30 ans) est une faille critique. C'est précisément sur ce segment que les startups Digital-First et les marques D2C (Direct-to-Consumer) ont gagné 6 points de part de marché : elles captent les nouveaux consommateurs que AnyCompany ne parvient pas à séduire. Si la tendance continue, la base client de AnyCompany va naturellement s'éroder sans renouvellement.
 
-3. **Stratégie commerciale alignée** :
-   - Investir en marketing pendant les périodes de faible demande
-   - Maximiser la capacité de production/livraison en haute saison
-   - Développer des produits complémentaires pour lisser la saisonnalité
+**Stratégie de redressement :**
+Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit impérativement rajeunir sa base client sans aliéner son segment premium actuel.
 
----
+## 06_marketing_promotion_impact.sql
+## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
+**Résultats clés :**
+- **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une **augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)**
+  
+- **Augmentation du Panier Moyen (AOV) :** Le ticket moyen par transaction s'élève à 5 308,83 $ lors des promotions, contre 5 009,16 $ en temps normal. Cela représente un **"LIFT" (incrément) de 6 % de la valeur d'achat.**
+  
+- **Volume de Commandes :** On observe une légère hausse du nombre moyen de commandes quotidiennes **(passant de 1,10 à 1,14)** pendant les périodes promotionnelles.
+  
+- **Fréquence des Offres :** Les promotions n'ont été actives que pendant 37 jours sur un total de 899 jours analysés (environ 4 % du temps).
 
-### 2.2 Efficacité Promotionnelle (Constat B)
+**Insight Business :**
+Les promotions de AnyCompany ne sont pas de simples "braderies" qui détruisent la marge ; elles fonctionnent comme un puissant levier d'Upselling. Le fait que le panier moyen augmente (et non l'inverse) prouve que les clients profitent des offres pour acheter des produits plus premium ou en plus grandes quantités (Volume Buy).
+Cependant, le véritable problème réside dans la sous-exploitation du levier marketing : avec seulement 37 jours de promotion sur près de 3 ans, l'entreprise a laissé ses ventes en mode "pilote automatique" (organique). Cette passivité a laissé le champ libre aux concurrents Digital-First qui, eux, utilisent des promotions dynamiques et fréquentes pour capter l'attention des consommateurs.
 
-**📌 Situation actuelle :**
-- Les promotions ne génèrent pas d'uplift significatif (effet cannibilisation)
-- Clients profitent de remises sur des achats déjà programmés
-- ROI promotionnel mitigé voire négatif
+**Stratégie de redressement :**
 
-**💡 Interprétation métier :**
-1. **Effet "trappe à prix"** :
-   - Clients apprennent à attendre les promotions
-   - Leur probabilité d'achat sans promo diminue progressivement
-   - La marge nette réduite ne compense pas le volume additionnel
+Pour atteindre l'objectif de +10 points de part de mercado malgré un budget marketing réduit de **30 %** :
+1. **Augmenter la fréquence des campagnes :** Passer de **4 % à 15-20 %** du temps sous promotion ciblée. Chaque jour de promotion rapporte en moyenne 523 $ de CA supplémentaire par rapport à une journée normale.
+2. **Cibler l'augmentation du panier moyen :** Puisque les clients réagissent positivement en augmentant leur dépense, il faut privilégier les offres de type "Achetez-en 2, obtenez **le 3ème à -50 %"** ou des bundles sur les Organic Meal Solutions.
+3. **Rentabilisation du budget :** Au lieu de campagnes d'image de marque coûteuses, AnyCompany doit réallouer ses ressources vers ces promotions à fort ROI, capables de générer une croissance immédiate du chiffre d'affaires et de stabiliser la part de marché.
 
-2. **ROI promotionnel critique** :
-   - Investissement marketing en remises directes = coût direct immédiat
-   - Retour = mêmes clients, achats programmés, marge érodée
-   - **Recommandation** : Utiliser des promos "intelligentes" plutôt que des remises brutes
-     - Bundling produits (augmente panier sans baisser marge)
-     - Loyalty rewards (fidélise et crée habitude d'achat)
-     - Time-limited offers (crée urgence sans former habitude de remise)
 
-3. **Optimisation du mix promotionnel** :
-   - Identifier les types de promotions avec ROI positif
-   - Concentrer le budget sur les segments réceptifs
-   - Éliminer les promotions "zombies" sans impact
+## 5. Sensibilité des Catégories aux Promotions
+**Résultats clés :**
+- **Le Leader :** La catégorie **Organic Meal Solutions** est la plus réactive, générant **133 105,58 $** (60% du revenu promo total).
+- **Efficacité du rabais :** Les "Meal Solutions" obtiennent ce résultat avec le rabais moyen le plus faible (**11,63%**).
+- **Dépendance aux remises :** La catégorie **Organic Beverages** nécessite une remise beaucoup plus agressive (**17,07%**) pour des revenus moindres (73 598 $).
 
----
+**Insight Business :**
+**Organic Meal Solutions** est la catégorie "moteur" de l'entreprise : elle déclenche des achats importants sans sacrifier trop de marge. À l'inverse, les boissons (Beverages) sont très sensibles au prix y consomment trop de budget promotionnel pour un retour sur investissement plus faible.
 
-### 2.3 Qualité Produit & Satisfaction Client (Constat C)
+**Stratégie de redressement :**
+Prioriser les remises sur les **Meal Solutions** pour maximiser le chiffre d'affaires immédiat. Pour les catégories moins performantes comme les Snacks ou Beverages, tester des stratégies de "Bundling" (offres groupées) avec les repas au lieu de faire des remises directes qui érodent la rentabilité.
 
-**📌 Situation actuelle :**
-- Certains problèmes (surtout logistiques/livraison) génèrent de nombreux cas
-- Taux de résolution inégal selon la catégorie d'incident
-- Corrélation claire : Problèmes non résolus → Satisfaction basse (< 3.5/5)
+## 6. Performance des Campagnes Marketing (Lien Budget vs Conversion)
+**Résultats clés :**
+- **Allocation Budgétaire :** Les budgets les plus massifs sont alloués au **Personal Care via Email** (32,4 M$) et à l'**Electronique via Social Media** (31,3 M$).
+- **Champions de la Conversion :** Le taux de conversion le plus élevé est détenu par le **Baby Food via Influencer (6,11%)**, suivi de près par les **Beverages via Content Marketing (6,00%)**.
+- **Stabilité de l'Électronique :** Cette catégorie performe extrêmement bien sur le **Content Marketing (5,96%)** et l'**Email (5,99%)**, avec un reach cumulé dépassant les 110 millions de prospects.
+- **Points Faibles :** Les campagnes **Radio pour le Household (5,04%)** et le **TV pour les Beverages (5,05%)** présentent les conversions les plus basses malgré des budgets significatifs.
 
-**💡 Interprétation métier :**
+**Insight Business :**
+L'investissement n'est pas toujours aligné sur la performance. Nous sur-investissons dans des canaux traditionnels pour certaines catégories (Email/Personal Care) alors que des niches comme les **Influenceurs (Baby Food)** ou le **Content Marketing (Beverages)** offrent un bien meilleur taux de conversion. L'électronique est notre catégorie la plus équilibrée entre visibilité et efficacité.
 
-1. **Risque majeur de fidélisation** :
-   - Clients insatisfaits (< 3.5/5) sont des "détracteurs" actifs
-   - Risque : Publicité négative, attrition accélérée, réduction du lifetime value
-   - **Coût** : Acquérir un client nouveau = 5-10x le coût de rétention d'un client existant
+**Stratégie de redressement :**
+Pour respecter la baisse de 30% du budget marketing, il est impératif de **réallouer les fonds** des canaux TV/Radio vers le **Marketing d'Influence et de Contenu**. Nous recommandons de réduire de 20% le budget Email du Personal Care pour le réinjecter dans le segment Baby Food/Influencers, où le potentiel de conversion est maximal.
 
-2. **Levier opérationnel direct** :
-   - Problèmes non résolus = clients perdus automatiquement
-   - Résolution rapide des incidents = satisfaction rétablie et confiance restaurée
-   - **Business case** : Chaque jour gagné en résolution = réduction de 5-10% du risque de churn
+## 7. Identification des Campagnes les plus efficaces (ROI)
+**Résultats clés :**
+- **Canal le plus rentable :** Le **Marketing d'Influence** affiche le coût par conversion le plus bas du marché (**8,71 $**).
+- **Efficacité du Contenu :** Le **Content Marketing** suit de près avec un coût de **8,83 $**, confirmant que l'engagement organique est très économique.
+- **Canal le plus coûteux :** La **Radio** est le moins performant avec un coût de **9,85 $** par client (13% plus cher que les influenceurs).
+- **Volume vs Coût :** Le Social Media et l'Email génèrent le plus gros volume de conversions, mais à un coût moyen plus élevé (~9,20 $).
 
-3. **Opportunité de différenciation** :
-   - Excellence en service client = justification pour augmenter les prix de 3-5%
-   - Impact direct sur marge sans investissement marketing majeur
-   - Créer un avantage compétitif durable basé sur l'expérience client
+**Insight Business :**
+Il existe une opportunité majeure d'optimisation. La **Radio** et la **TV** sont des canaux "chers et peu performants" pour AnyCompany. Le Marketing d'Influence et le Contenu permettent d'acquérir des millions de clients à un coût nettement inférieur.
 
----
+**Stratégie de redressement :**
+Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les investissements en Radio** et réduire drastiquement la TV. La réallocation de ces fonds vers les **Influenceurs et le Content Marketing** permettra de maintenir le volume d'acquisition tout en réduisant les coûts fixes, sécurisant ainsi l'objectif de reconquête de part de marché.
 
-### 2.4 Segmentation Client & Ciblage (Constat D)
+## 07_Expérience Client & Opérations.sql
 
-**📌 Situation actuelle :**
-- Clients ne sont pas homogènes : 3-4 segments avec comportements distincts
-- Chaque segment répond différemment aux promotions et au messaging
-- Modèles ML permettent prédire les clients à risque de churn
+## 8. Service Client : Analyse des Interactions (Volume vs Satisfaction)
+**Résultats clés :**
+- **Canaux les plus sollicités :** Les **Plaintes par Email** (289 interactions) et les **Demandes de produits par Chat** (276) dominent le flux de travail du service client.
+- **Pic de Satisfaction :** Le suivi de commande (**Order Status**) via **Email** enregistre le score de satisfaction le plus élevé (**3,20**), suivi de près par les retours sur les réseaux sociaux (3,17).
+- **Alerte Critique :** Le **Support Technique par Chat** est le point le plus faible de l'expérience client avec un score de seulement **2,75**, ce qui indique une incapacité à résoudre des problèmes complexes en temps réel.
+- **Inefficacité du Téléphone :** Les appels pour le statut des commandes sont massifs (271 interactions) mais génèrent une satisfaction médiocre (**2,91**), suggérant un processus fastidieux pour le client.
 
-**💡 Interprétation métier :**
+**Insight Business :**
+Les données révèlent une surcharge des canaux synchrones (Téléphone/Chat) pour des questions à faible valeur ajoutée comme le statut des commandes. Le décalage de satisfaction entre l'Email (3,20) et le Téléphone (2,91) pour une même catégorie montre que le client préfère une information écrite et précise plutôt qu'une attente téléphonique.
 
-1. **One-size-fits-all ne marche pas** :
-   - **Clients fidèles** : Valeur LTV élevée, besoin de reconnaissance (VIP programs, exclusivité)
-   - **Clients sensibles au prix** : Volume important, marge faible (efficiency focus, value programs)
-   - **Clients opportunistes** : Réactifs aux promos limitées (à utiliser pour acquisition)
-   - **Clients à risque** : Besoin d'actions relationnelles préventives (offres personnalisées, contact)
+**Stratégie de redressement :**
+**1. Automatisation "Self-Service" :** Implémenter un système de suivi de commande automatisé (chatbot ou portail client) pour réduire les 271 appels téléphoniques, permettant de réallouer le budget vers des experts techniques.
+**2. Optimisation du Chat Technique :** Renforcer la base de connaissances des agents de chat ou améliorer l'escalade vers le support technique de niveau 2, car le score de 2,75 est critique pour la rétention client.
+**3. Migration vers le Digital :** Encourager l'utilisation de l'Email et des réseaux sociaux pour les retours et plaintes, car ces canaux présentent une meilleure efficacité perçue par les clients.
 
-2. **Allocation budgétaire optimisée par segment** :
-   - Budget marketing doit être réparti selon la rentabilité, pas équitablement
-   - Investir davantage sur segments fidèles (ROI 3-4x meilleur)
-   - Tactiques marketing et messaging spécifiques par segment
+ ## 9. Opérations : Analyse des Ruptures de Stock (Risques Logistiques)
+**Résultats clés :**
+- **Déficit Critique :** L'entrepôt **Wright-Warren** présente le déficit le plus alarmant pour la catégorie **Snacks** avec un manque de **388 unités** par rapport au seuil de réapprovisionnement.
+- **Catégories les plus exposées :** Les **Boissons (Beverages)** et l'**Alimentation Bébé (Baby Food)** sont les catégories qui apparaissent le plus fréquemment en situation de sous-stock critique.
+- **Gravité du stock actuel :** Plusieurs produits affichent un stock réel représentant moins de **25%** du seuil de sécurité (ex: Boissons chez Sims, Rodriguez and Byrd avec 101 unités pour un seuil de 439).
+- **Entrepôts sous tension :** Wright-Warren, Clarke-Phillips et Wise LLC concentrent les plus gros volumes de déficit, mettant en péril la distribution régionale.
 
-3. **Churn prévention comme levier de rentabilité** :
-   - Modèles prédictifs identifient clients risque AVANT départ
-   - Actions préventives ciblées réduisent le churn de 20-30%
-   - **Impact** : Sauver 10% des clients at-risk = +5-15% marge nette
+**Insight Business :**
+La chaîne logistique est actuellement en mode "réactif" plutôt que "prédictif". Étant donné que AnyCompany est un acteur majeur du secteur Food & Beverage, avoir des ruptures massives sur les catégories **Beverages** (cœur de métier) et **Baby Food** (haute fidélité) est critique. Ces ruptures expliquent probablement une partie de la baisse de la part de marché (de 28% à 22%), car le produit n'est simplement pas disponible en rayon.
 
----
+**Stratégie de redressement :**
+**1. Réapprovisionnement Prioritaire :** Lancer des ordres d'achat d'urgence pour les catégories Boissons et Alimentation Bébé dans les entrepôts du Top 10 des déficits.
+**2. Révision des seuils (Reorder Points) :** Ajuster les seuils de sécurité en fonction de la saisonnalité et des délais de livraison des fournisseurs (Lead Time) pour éviter que le stock ne tombe aussi bas avant le déclenchement d'une commande.
+**3. Optimisation des Transferts :** Évaluer si des entrepôts avec un surplus (ex: Torres Ltd en Clothing) peuvent libérer de l'espace ou des ressources logistiques pour prioriser le flux des produits de grande consommation à forte rotation.
 
-## 3️⃣ IMPACT POTENTIEL SUR LA STRATÉGIE MARKETING
+## 10. Logistique : Performance et Délais de Livraison
+**Résultats clés :**
+- **Incohérence des Délais :** Les méthodes **Express** en Asie (7,94 jours) et **International** en Europe (7,93 jours) affichent les délais moyens les plus longs.
+- **Échec de la Promesse Client :** La méthode **Next Day** (lendemain) ne respecte nulle part son nom, avec des délais réels oscillant entre **7,13 jours** (Amérique du Nord) et **7,84 jours** (Océanie).
+- **Volume vs Rapidité :** L'Amérique du Nord concentre le plus grand nombre d'envois en mode **Standard** (203 envois) avec un délai de 7,47 jours, ce qui est paradoxalement plus rapide que certains envois Express en Asie.
+- **Homogénéité Critique :** Il y a très peu de variation entre le mode le plus lent (7,94) et le plus rapide (7,13), ce qui suggère que les options prioritaires ne bénéficient d'aucun traitement de faveur réel dans la chaîne logistique.
 
-L'interprétation des constats clés révèle des opportunités d'optimisation majeures de la stratégie marketing et commerciale. Ces impacts se traduisent par un plan d'action décliné en trois horizons temporels, adressant les leviers clés identifiés :
+**Insight Business :**
+AnyCompany fait face à une crise de crédibilité logistique. Les clients paient probablement un supplément pour des services "Express" ou "Next Day" qui, dans les faits, mettent autant de temps que le service Standard (environ 7 à 8 jours). Cette situation est un moteur majeur d'insatisfaction et explique les mauvaises notes obtenues dans les interactions avec le service client.
 
-- **Court terme** : Arrêt des hémorragies (service client, ROI promos, saisonnalité)
-- **Moyen terme** : Activation des leviers de croissance (segmentation, excellence client)
-- **Long terme** : Transformation structurelle vers un marketing data-driven et personnalisé
+**Stratégie de redressement :**
+1. **Renégociation des Contrats Transporteurs :** Auditer les prestataires (Carriers) en Asie et Europe pour comprendre pourquoi les envois Express sont plus lents que les envois Standards.
+2. **Alignement Marketing :** Suspendre la facturation premium pour le "Next Day" tant que les délais réels ne sont pas drastiquement réduits, afin d'éviter les plaintes pour publicité mensongère.
+3. **Optimisation Régionale :** Prioriser l'amélioration du hub de distribution en Amérique du Nord, qui possède déjà le volume le plus élevé et les meilleurs délais relatifs, pour en faire un modèle d'efficacité exportable aux autres régions.
 
-### 3.1 Court Terme (0-3 mois)
+## 11. Analyse de la Satisfaction Produit (Qualité et Avis)
+**Résultats clés :**
+- **Performance de Masse :** La catégorie **Plant-based Milk Alternatives** est le moteur de satisfaction avec une excellente note de **4,22** sur plus de **422 avis**, confirmant la solidité de ce segment premium.
+- **Alerte Qualité :** Les **Cold-pressed Juices** (Jus pressés à froid) affichent une note décevante de **3,65** pour un volume important (356 avis). C'est le principal point de déception pour les clients réguliers.
+- **Pépite de Croissance :** Les **Ready-to-eat Organic Salads** reçoivent une note exceptionnelle de **4,72**, signalant un fort potentiel de fidélisation si les investissements marketing augmentent sur ce produit.
+- **Données Insuffisantes :** Les Organic Energy Bars (1.00) et Breakfast Cereals (5.00) ne comptent qu'une seule évaluation, ce qui rend ces scores statistiquement non significatifs mais nécessite une attention immédiate pour éviter un mauvais bouche-à-oreille initial.
 
-#### **Action 1 : Optimisation Opérationnelle Service Client (Constat C)**
-- **Actions recommandées** :
-  - Réduire le temps de résolution des incidents logistiques (< 48h cible)
-  - Implémenter des SLA clairs par catégorie d'incident
-  - Escalade automatique pour cas non résolus > 5 jours
-  - Former l'équipe sur soft skills et empathie client
-- **Objectif métier** : Améliorer considérablement la satisfaction client suite à un incident (4.5/5 vs 3.5/5 actuellement)
-- **KPI** : First Contact Resolution %, CSAT score, Ticket resolution time, Churn rate (at-risk segments)
+**Insight Business :**
+Il existe une corrélation directe entre la baisse de parts de marché et la qualité perçue de nos produits à fort volume comme les jus de fruits (3,65). Alors que la concurrence D2C (Direct-to-Consumer) mise sur la fraîcheur, AnyCompany semble stagner sur la qualité de ses boissons phares, ce qui pousse les clients vers des alternatives mieux notées.
 
-#### **Action 2 : Audit & Réalignement de la Stratégie Promotionnelle (Constat B)**
-- **Actions recommandées** :
-  - Identifier et suspendre les promotions sans ROI positif
-  - Analyser l'impact réel : (Moyenne des ventes quotidienne avec promo vs Moyenne des ventes quotidiennes sans promo)
-  - Tester bundling et loyalty rewards vs. remises directes
-  - Réduire la fréquence des promos récurrentes
-- **Objectif métier** : Augmenter les bénéfices de 2-4% en éliminant les promotions inefficaces
-- **KPI** : Marge nette, ROI par type de promotion, Repeat purchase rate
+**Stratégie de redressement :**
+**1. Contrôle Qualité Prioritaire :** Auditer la chaîne de production et la fraîcheur des "Cold-pressed Juices" pour remonter la note au-dessus de 4.0, car c'est une catégorie stratégique pour le CA.
+**2. Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
+**3. Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
 
-#### **Action 3 : Data-Driven Seasonality Planning (Constat A)**
-- **Actions recommandées** :
-  - Analyser les patterns mensuels de ventes par région
-  - Créer des prévisions de demande (forecast) pour les 12 prochains mois
-  - Ajuster les stocks en fonction des pics/creux identifiés
-  - Planifier les campagnes marketing contra-cycliques
-- **Objectif métier** : Réduire de 50% les ruptures de stock et de 30% les surplus de stock
-- **KPI** : Inventory turnover, Out-of-stock rate, Forecast accuracy
+## 08.Analyse_anomalie
+
+**Objectif :** Évaluer la fiabilité des données du schéma **SILVER** avant l'analyse métier afin de garantir des décisions basées sur des faits exacts.
 
 ---
 
-### 3.2 Moyen Terme (3-6 mois)
+### **1. Intégrité Financière (Montants)**
+*   **Notion de la requête :** Détection de ventes avec des montants négatifs ou nuls (`amount <= 0`).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Les données de revenus sont saines. Il n'y a pas d'erreurs de saisie ou de corruption de données sur les flux de ventes, ce qui garantit la précision des calculs de ROI.
 
-#### **Action 4 : Déploiement Segmentation Client (Constat D)**
-- **Actions recommandées** :
-  - Activer les modèles ML (clustering) en production
-  - Créer des micro-stratégies par segment client :
-    - *Fidèles* : VIP program, accès prioritaire, pricing premium
-    - *Price-sensitive* : Value bundles, loyalty points, bulk deals
-    - *Opportunistes* : Flash sales limitées, gamification, social engagement
-    - *À risque* : Win-back campaigns, offres personnalisées, contact relationnel
-  - Implémenter la segmentation dans le CRM/martech
-- **Objectif métier** : +15-25% de conversion sur marketing campaigns
-- **KPI** : Segment-specific conversion rate, CLV, Churn reduction by segment
+### **2. Cohérence Temporelle (Dates)**
+*   **Notion de la requête :** Identification de transactions ou interactions enregistrées avec des dates dans le futur.
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La chronologie des données est cohérente. Aucun biais temporel ne viendra fausser l'analyse de l'évolution des ventes ou des campagnes.
 
-#### **Action 5 : Excellence en Service Client - Levier de Rétention (Constat C)**
-- **Actions recommandées** :
-  - Mesurer l'impact financier : Chaque jour gagné en résolution = -5-10% churn risk
-  - Créer des quick wins : Résoudre les 3 catégories d'incidents les plus fréquentes
-  - Mettre en place un feedback loop client → amélioration continue
-  - Documenter et communiquer les améliorations (renforcer la confiance)
-- **Objectif métier** : Augmenter CSAT de 3.5/5 vers 4.2+/5
-- **KPI** : CSAT score by category, NPS, Repeat purchase rate, Customer lifetime value
+### **3. Fiabilité Démographique (Âges)**
+*   **Notion de la requête :** Identification d'âges irréalistes chez les clients (moins de 12 ans ou plus de 100 ans).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La base client est démographiquement fiable. Les segmentations par tranches d'âge reflètent la réalité du marché et peuvent être utilisées pour le ciblage marketing.
 
----
+### **4. Logique de Campagne (Promotions)**
+*   **Notion de la requête :** Vérification des promotions dont la date de fin est antérieure à la date de début.
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Le calendrier promotionnel est logiquement structuré. L'analyse de l'impact des promotions sur les ventes reposera sur des périodes de validité exactes.
 
-### 3.3 Long Terme (6-12 mois)
+### **5. Standardisation des Avis (Satisfaction)**
+*   **Notion de la requête :** Recherche de scores de satisfaction client en dehors de l'échelle standard (1 à 5).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** Les données du service client sont correctement normalisées. L'analyse de la satisfaction reflète fidèlement l'expérience des consommateurs.
 
-#### **Action 6 : Transformation Marketing Data-Driven (tous les constats)**
-- **Fondation établie par** : Actions 1-5
-- **Objectifs stratégiques** :
-  - Shift des promotions "batch & blast" vers "personalized & smart"
-  - Marketing orchestration par segment et saisonnalité
-  - Attribution marketing multi-touch
-- **Budget reallocation** :
-  - ↓ Promotions basiques (40% → 20%)
-  - ↑ Loyalty & retention programs (10% → 20%)
-  - ↑ Service excellence & analytics (10% → 30%)
-- **Objectif métier** : 30%+ ROAS sur marketing spend
-- **KPI** : Marketing ROI, Customer lifetime value, Brand equity (NPS +40pts)
+### **6. Complétude des Données (Valeurs Nulles)**
+*   **Notion de la requête :** Recherche de valeurs manquantes sur les clés de jointure critiques (`customer_id`, `region`).
+*   **Résultat :** **0 anomalie détectée.**
+*   **Insight :** La connectivité entre les tables est parfaite. Nous ne déplorons aucune perte de données lors des jointures entre les ventes, les clients et les régions.
 
 ---
 
-## 4️⃣ RECOMMANDATIONS PRIORITAIRES & GOUVERNANCE
-
-Les actions identifiées doivent être priorisées et gouvernées pour assurer l'impact maximum avec les ressources disponibles. La hiérarchie ci-dessous s'appuie sur l'urgence (risque immédiat), l'impact métier et la faisabilité technique.
-
-### 🔴 Priorité 1 - URGENT (Semaines 1-4)
-
-1. **SLA Service Client** (Constat C) : Résolution < 48h pour 80%+ incidents logistiques
-   - **Raison** : Problèmes non résolus = churn immédiat, satisfaction < 3.5/5
-   - **Action** : Réorganiser équipe support, former, responsabiliser
-   - **Impact** : +30% CSAT, -20% churn
-
-2. **Audit Promotions** (Constat B) : Identifier ROI réel (X€ avec vs Y€ sans promo)
-   - **Raison** : Cannibilisation = gaspillage budgétaire massif
-   - **Action** : Suspendre immédiatement les promos sans ROI positif
-   - **Impact** : Recouvrer 200-400bps marge nette
-
-3. **Forecast Saisonnalité** (Constat A) : Analyser volatilité mensuelle
-   - **Raison** : Pics/creux non anticipés = ruptures ou surstock
-   - **Action** : Créer prévisions par mois/région, ajuster stocks
-   - **Impact** : Optimiser stocks, améliorer cash flow
-
-### 🟠 Priorité 2 - IMPORTANTE (Mois 1-3)
-
-4. **Activation Segmentation ML** (Constat D) : Déployer clustering en production
-   - **Raison** : Approches uniformes = pertes sur segments clés
-   - **Action** : Activer ML models, intégrer dans CRM
-   - **Impact** : +15-25% conversion rate, ROI marketing +40%
-
-5. **Tests A/B Segment-Spécifiques** (Constat B + D) : Stratégies différentes par segment
-   - **Raison** : Fidèles ≠ Price-sensitive ≠ Opportunistes
-   - **Action** : Tester bundling pour fidèles, loyalty pour price-sensitive
-   - **Impact** : +20% conversion segments cibles
-
-### 🟡 Priorité 3 - STRUCTURELLE (Mois 3-6)
-
-6. **Programme Loyalty Multi-Tier** (Constat D) : Fidélisation par segment
-   - **Raison** : Remplacement des promotions agressives = plus de marge
-   - **Action** : Design, tech selection, soft launch, CRM integration
-   - **Impact** : +15% repeat purchase, CLV +50%
-
-7. **Excellence Service = Pricing Premium** (Constat C) : Justifier augmentation prix
-   - **Raison** : Service excellent = différenciation, moins sensible au prix
-   - **Action** : Améliorer CSAT → communiquer → tester +3-5% prix
-   - **Impact** : +3-5% marge sur segments fidèles
-
----
-
-## 5️⃣ MÉTRIQUES DE SUIVI & PILOTAGE
-
-Le succès des actions dépend d'une mesure rigoureuse et d'un pilotage constant. Les KPI ci-dessous permettront de valider les impacts réels et d'ajuster la stratégie en temps réel.
-
-### **KPI Principaux (Dashboards mensuels)**
-
-| Métrique | Baseline | Target 3M | Target 12M | Constat | Responsable |
-|----------|----------|----------|----------|---------|-------------|
-| **CSAT Score** | 3.5/5 | 4.0/5 | 4.5/5 | C | CX Lead |
-| **Service Resolution Time** | TBD | < 48h | < 24h | C | Operations |
-| **First Contact Resolution %** | TBD | 70% | 85%+ | C | Support Manager |
-| **Promotion ROI** | < 1.0x | 1.2x | 1.5x+ | B | Marketing Director |
-| **Marge Promotionnelle** | Réduite | +2% | +4% | B | CFO |
-| **Churn Rate (monthly)** | TBD | -15% | -30% | C + D | CRM Manager |
-| **Repeat Purchase Rate** | TBD | +10% | +25% | A + B + D | Product Manager |
-| **Forecast Accuracy** | N/A | 80% | 90%+ | A | Supply Chain |
-| **Segment CLV Spread** | TBD | 3:1 (fidèles vs prix-sens) | 5:1 | D | CMO |
-| **NPS (Net Promoter Score)** | TBD | +15 pts | +40 pts | C + D | Brand Director |
-| **Marketing ROI** | 1.2x | 2.0x | 3.0x+ | B + D | Performance Marketing |
-
----
-
-## 📋 Annexe : Sources de Données
-
-### **SQL Analytics Used**
-- `05_sales_trend_analysis.sql` : Ventes par mois & catégorie
-- `06_promotion_marketing_impact.sql` : Efficacité promos, ROI marketing
-- `07_customer_satisfaction_insights.sql` : Satisfaction client, qualité produit
-- `08_logistics_shipping_performance.sql` : Performance logistique (impact indirect)
-
-### **ML Models Used**
-- `customer_segmentation.ipynb` : Clustering clients (K-Means)
-- `purchase_propensity.ipynb` : Prédiction probabilité achat
-- `promotion_response_model.ipynb` : Prédiction réaction aux promos
-
-### **Data Assets**
-- **Database** : ANYCOMPANY_LAB
-- **Schémas** : BRONZE (raw), SILVER (cleaned)
-- **Warehouse** : ANYCOMPANY_WH
+**Conclusion du Diagnostic :**
+Le schéma **SILVER** présente un score de qualité de **100%**. Les données sont certifiées conformes pour l'analyse stratégique. AnyCompany dispose d'un socle de données fiable, prêt à être transformé en insights business et en modèles prédictifs.
