@@ -1,0 +1,56 @@
+/*******************************************************************************
+PHASE 2.1 : DIAGNOSTIC DE QUALITÉ ET DÉTECTION DES ANOMALIES
+Objectif : Identifier les données incohérentes qui pourraient fausser l'analyse.
+*******************************************************************************/
+
+-- 1. ANOMALIES FINANCIÈRES
+-- Chercher des ventes avec des montants négatifs ou nuls (impossible pour une 'Sale')
+SELECT 
+    'Ventes négatives ou nulles' AS anomaly_type,
+    COUNT(*) AS records_found
+FROM silver.financial_transactions_clean
+WHERE transaction_type = 'Sale' AND amount <= 0;
+
+
+-- 2. ANOMALIES TEMPORELLES (Dates futures)
+-- Chercher des transactions ou interactions avec des dates dans le futur
+SELECT 
+    'Dates dans le futur' AS anomaly_type,
+    COUNT(*) AS records_found
+FROM silver.financial_transactions_clean
+WHERE transaction_date > CURRENT_DATE();
+
+-- 3. ANOMALIES DÉMOGRAPHIQUES (Âges irréalistes)
+-- Chercher des clients avec un âge incohérent (ex: plus de 100 ans ou moins de 12 ans)
+SELECT 
+    'Âges irréalistes (>100 ou <12 ans)' AS anomaly_type,
+    COUNT(*) AS records_found
+FROM silver.customer_demographics_clean
+WHERE DATEDIFF('year', date_of_birth, CURRENT_DATE()) > 100 
+   OR DATEDIFF('year', date_of_birth, CURRENT_DATE()) < 12;
+
+-- 4. ANOMALIES DE PROMOTIONS (Dates incohérentes)
+-- Chercher des promotions où la date de fin est AVANT la date de début
+SELECT 
+    'Promo : Date fin < Date début' AS anomaly_type,
+    COUNT(*) AS records_found
+FROM silver.promotions_clean
+WHERE end_date < start_date;
+
+
+-- 5. ANOMALIES DE SERVICE CLIENT (Scores hors limites)
+-- Chercher des scores de satisfaction qui ne sont pas entre 1 et 5
+SELECT 
+    'Satisfaction hors échelle (1-5)' AS anomaly_type,
+    COUNT(*) AS records_found
+FROM silver.customer_service_interactions_clean
+WHERE customer_satisfaction < 1 OR customer_satisfaction > 5;
+
+
+-- 6. VÉRIFICATION DES VALEURS MANQUANTES (NULLS)
+-- Identifier les colonnes critiques vides qui empêchent les jointures
+SELECT 
+    'Clients sans ID' AS null_check, COUNT(*) FROM silver.customer_demographics_clean WHERE customer_id IS NULL
+UNION ALL
+SELECT 
+    'Transactions sans Région', COUNT(*) FROM silver.financial_transactions_clean WHERE region IS NULL;

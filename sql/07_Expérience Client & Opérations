@@ -1,0 +1,53 @@
+/*
+-- 8.Service Client : Analyse des Interactions
+Objectif : Analyser les causes majeures d'insatisfaction et le taux de satisfaction client.
+*/
+SELECT 
+    issue_category, 
+    interaction_type, 
+    COUNT(*) AS total_interactions, 
+    ROUND(AVG(customer_satisfaction), 2) AS satisfaction_client
+FROM silver.customer_service_interactions_clean
+GROUP BY 1, 2
+ORDER BY total_interactions DESC;
+
+/*
+-- 9.Opérations : Analyse des Ruptures de Stock
+Objectif : Détecter les produits en risque de rupture (Stock < Seuil de réapprovisionnement)
+*/
+SELECT 
+    warehouse, 
+    product_category, 
+    current_stock, 
+    reorder_point, 
+    (reorder_point - current_stock) AS deficit_unites
+FROM bronze.inventory -- Ou silver.inventory si disponible
+WHERE current_stock < reorder_point
+ORDER BY deficit_unites DESC;
+
+/*
+-- 10.Logistique : Délais de Livraison et Performance
+Objectif : Évaluer si les délais de livraison impactent l'expérience client par région.
+*/
+SELECT 
+    destination_region, 
+    shipping_method, 
+    ROUND(AVG(DATEDIFF('day', ship_date, estimated_delivery)), 2) AS delai_moyen_jours,
+    COUNT(*) AS nombre_envois
+FROM silver.logistics_and_shipping_clean
+GROUP BY 1, 2
+ORDER BY delai_moyen_jours DESC;
+
+/*
+-- 11.Analyse de la satisfaction client et de la qualité
+-- Objectif : Déterminer si la qualité du produit ou le service impactent les ventes.
+-- 1. Note moyenne par catégorie de produit
+-- Identifier quelles catégories déçoivent les clients.
+*/
+SELECT 
+    product_category AS product_category,
+    ROUND(AVG(rating), 2) AS average_rating,
+    COUNT(*) AS total_reviews
+FROM silver.product_reviews_clean
+GROUP BY 1
+ORDER BY average_rating ASC;
