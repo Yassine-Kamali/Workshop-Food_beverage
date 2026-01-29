@@ -1,4 +1,4 @@
-## 05_sales_evolution.sql
+## Sales_evolution
 ## 1. Évolution des ventes dans le temps
 **Résultats clés :** 
 
@@ -48,7 +48,7 @@ Les données révèlent un risque de "vieillissement" de la marque. AnyCompany p
 **Stratégie de redressement :**
 Pour atteindre l'objectif de +10 points de part de marché, AnyCompany doit impérativement rajeunir sa base client sans aliéner son segment premium actuel.
 
-## 06_marketing_promotion_impact.sql
+## Marketing_promotion_impact
 ## 4.Comparaison des Ventes: Impact des Promotions vs Ventes Organiques
 **Résultats clés :**
 - **Performance Journalière :** Les jours sous promotion génèrent un revenu quotidien moyen de 6.026$, soit une **augmentation de 9,5% par rapport aux jours de ventes organique (5.503,10$)**
@@ -109,7 +109,7 @@ Il existe une opportunité majeure d'optimisation. La **Radio** et la **TV** son
 **Stratégie de redressement :**
 Pour absorber la réduction budgétaire de 30%, AnyCompany doit **éliminer les investissements en Radio** et réduire drastiquement la TV. La réallocation de ces fonds vers les **Influenceurs et le Content Marketing** permettra de maintenir le volume d'acquisition tout en réduisant les coûts fixes, sécurisant ainsi l'objectif de reconquête de part de marché.
 
-## 07_Expérience Client & Opérations.sql
+## Expérience Client & Opérations
 
 ## 8. Service Client : Analyse des Interactions (Volume vs Satisfaction)
 **Résultats clés :**
@@ -171,7 +171,7 @@ Il existe une corrélation directe entre la baisse de parts de marché et la qua
 **2. Levier de Croissance :** Utiliser l'excellente réputation des **Salades Bio** et des **Laits Végétaux** comme "produits d'appel" dans les campagnes marketing pour regagner les 10 points de parts de marché visés.
 **3. Campagne de Collecte d'Avis :** Lancer une campagne d'incitation (ex: coupons de réduction) pour les barres énergétiques et les céréales afin d'obtenir une base d'avis représentative et corriger les éventuels défauts de lancement.
 
-## 08.Analyse_anomalie
+## Analyse_anomalie
 
 **Objectif :** Évaluer la fiabilité des données du schéma **SILVER** avant l'analyse métier afin de garantir des décisions basées sur des faits exacts.
 
