@@ -23,7 +23,6 @@
 ```
 Food-Beverage/
 ├── Business_insights.md                    # Synthèse des analyses business
-├── Business_insights_raports/              # Rapports détaillés par thématique
 ├── sql/                                    # Scripts SQL Snowflake
 │   ├── 00_GUIDE_EXECUTION.sql             # Guide d'ordre d'exécution
 │   ├── 01_setup_environment.sql           # Configuration Snowflake
@@ -262,4 +261,5 @@ Le projet intègre trois cas d'usage principaux développés dans le dossier `ml
    - Objectif : Estimer la probabilité de conversion pour chaque profil client.
 
 ---
+
 
